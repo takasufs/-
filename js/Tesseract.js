@@ -32,11 +32,11 @@ const recognize02 = function (evt) {
     //Tesseract.jsの実行
     Tesseract
         //OCR機能を実行する際の読み込むファイルや言語を設定（言語はlang: ''の中身をengやjpnに変更することで英語や日本語にすることが可能です）
-        .recognize(files[0], { lang: 'eng', tessedit_pageseg_mode: "RAW_LINE" })
+        .recognize(files[1], { lang: 'eng', tessedit_pageseg_mode: "RAW_LINE" })
         .then(function (result) {
             // 結果の表示
             //テキストエリアを指定
-            let textarea = document.getElementById("ocrResult");
+            let textarea = document.getElementById("ocrResult02");
             //テキストエリアに結果を埋め込む
             textarea.value = result.text;
         });

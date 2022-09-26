@@ -4,16 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ビリビリメーター（仮）</title>
+    <title>ビリビリチェッカー（仮）</title>
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        canvas{
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    <header>
-
+    <header class="header">
+        <div class="header__inner">
+            <img src="/images/lp/icon_LP_header.png" alt="ビリビリチェッカー（仮）">
+        </div>
     </header>
 
-    <main>
+    <main class="main">
+        <div class="main__inner">
+            <!-- form -->
+            <div class="mian__form">
+                    <!-- value01 -->
+                    <form action="#" method="post" class="main__form__item01__value">
+                        <textarea name="comment" cols="10" rows="2" class="value01"></textarea >
+                        <input type="file" name="example" accept="image/jpeg, image/png">
+                    </form>
+                    <!-- value02 -->
+                    <form action="#" method="post" class="main__form__item01__value">
+                        <textarea name="comment" cols="10" rows="2" class="value02"></textarea >
+                        <input type="file" name="example" accept="image/jpeg, image/png">
+                    </form>
+            </div>
+            <!-- answer -->
+            <div class="mian__ans">
+                <h4 class="mian__ans__ttl h4">結果</h4>
+                <!-- 結果 -->
+                <div class="mian__ans__value">
+                    <!-- canvas -->
+                    <canvas id="board" width="150" height="224"></canvas>
+                    <script>
+                    window.onload = ()=>{
+                    // canvas準備
+                    const board = document.querySelector("#board"); 
+                    const ctx = board.getContext("2d");
 
+                    // 画像読み込み
+                    const chara = new Image();
+                    chara.src = "/images/lp/lp_light_empty.png";  // 画像のURLを指定
+                    chara.onload = () => {
+                        ctx.drawImage(chara, 0, 0);
+                    };
+
+                    ctx.fillStyle = '#ccc';
+                        ctx.strokeStyle = 'red';
+                        ctx.rect(25, 25, 100, 100);
+                        ctx.fill();
+                        ctx.stroke();
+                    };
+                    </script>
+                </div>
+
+            </div>
+        </div>
     </main>
 
     <footer>

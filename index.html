@@ -8,9 +8,7 @@
     <title>ビリビリチェッカー（仮）</title>
     <link rel="stylesheet" href="./css/style.css">
     <style>
-        canvas {
-            border-radius: %;
-        }
+        canvas {}
     </style>
 </head>
 
@@ -22,7 +20,7 @@
     </header>
 
     <main class="main">
-        
+
         <div class="main__inner">
             <!-- form -->
             <div class="mian__form">
@@ -45,7 +43,6 @@
                     <!-- canvas -->
                     <canvas id="board" width="150" height="224"></canvas>
                     <script>
-<<<<<<< Updated upstream
                         window.onload = () =>
                         {
                             // canvas準備
@@ -60,23 +57,23 @@
                                 ctx.drawImage(chara, 0, 0);
                             };
                         };
-=======
-                    window.onload = ()=>{
-                    // canvas準備
-                    const board = document.querySelector("#board"); 
-                    const ctx = board.getContext("2d");
-                    context.fillStyle = "#FF9050";
+                        window.onload = () =>
+                        {
+                            // canvas準備
+                            const board = document.querySelector("#board");
+                            const ctx = board.getContext("2d");
+                            context.fillStyle = "#FF9050";
 
-                    // 画像読み込み
-                    const chara = new Image();
-                    chara.src = "/images/lp/lp_light_empty.png";  // 画像のURLを指定
-                    chara.onload = () => {
-                        ctx.drawImage(chara, 0, 0);
-                    };
+                            // 画像読み込み
+                            const chara = new Image();
+                            chara.src = "/images/lp/lp_light_empty.png";  // 画像のURLを指定
+                            chara.onload = () =>
+                            {
+                                ctx.drawImage(chara, 0, 0);
+                            };
 
 
-                    };
->>>>>>> Stashed changes
+                        };
                     </script>
                     <p class="mian__ans__value__txt">設定してください</p>
                 </div>
@@ -89,24 +86,24 @@
     </main>
 
     <footer class="footer">
-    <div class="footer__inner">
-        <nav class="footer__nav">
-            <ul class="fooer__nav__gnav">
-                <li class="footer__nav__gnav__item gnav01">
-                    <img src="" alt="" class="footer__nav__gnav__item__img gnav01__img"><br>
-                    <p class="footer__nav__gnav__item__txt gnav01__txt small">HOME</p>
-                </li>
-                <li class="footer__nav__gnav__item gnav02">
-                    <img src="" alt="" class="footer__nav__gnav__item__img gnav02__img"><br>
-                    <p class="footer__nav__gnav__item__txt gnav02__txt small">List</p>
-                </li>
-                <li class="footer__nav__gnav__item gnav03">
-                    <img src="" alt="" class="footer__nav__gnav__item__img gnav03__img"><br>
-                    <p class="footer__nav__gnav__item__txt gnav03__txt small">Ranking</p>
-                </li>
-            </ul>
-        </nav>
-    </div>
+        <div class="footer__inner">
+            <nav class="footer__nav">
+                <ul class="fooer__nav__gnav">
+                    <li class="footer__nav__gnav__item gnav01">
+                        <img src="" alt="" class="footer__nav__gnav__item__img gnav01__img"><br>
+                        <p class="footer__nav__gnav__item__txt gnav01__txt small">HOME</p>
+                    </li>
+                    <li class="footer__nav__gnav__item gnav02">
+                        <img src="" alt="" class="footer__nav__gnav__item__img gnav02__img"><br>
+                        <p class="footer__nav__gnav__item__txt gnav02__txt small">List</p>
+                    </li>
+                    <li class="footer__nav__gnav__item gnav03">
+                        <img src="" alt="" class="footer__nav__gnav__item__img gnav03__img"><br>
+                        <p class="footer__nav__gnav__item__txt gnav03__txt small">Ranking</p>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </footer>
     <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>

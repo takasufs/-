@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,12 @@
     <title>ビリビリチェッカー（仮）</title>
     <link rel="stylesheet" href="./css/style.css">
     <style>
-        canvas{
+        canvas {
             border-radius: 50%;
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <div class="header__inner">
@@ -20,19 +22,20 @@
     </header>
 
     <main class="main">
+        <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
         <div class="main__inner">
             <!-- form -->
             <div class="mian__form">
-                    <!-- value01 -->
-                    <form action="#" method="post" class="main__form__item01__value">
-                        <textarea name="comment" cols="10" rows="2" class="value01"></textarea >
-                        <input type="file" name="example" accept="image/jpeg, image/png">
-                    </form>
-                    <!-- value02 -->
-                    <form action="#" method="post" class="main__form__item01__value">
-                        <textarea name="comment" cols="10" rows="2" class="value02"></textarea >
-                        <input type="file" name="example" accept="image/jpeg, image/png">
-                    </form>
+                <!-- value01 -->
+                <form action="#" method="post" class="main__form__item01__value">
+                    <textarea name="comment" cols="10" rows="2" class="value01" id="ocrResult"></textarea>
+                    <input type="file" name="example" accept="image/jpeg, image/png" id="uploader" value="">
+                </form>
+                <!-- value02 -->
+                <form action="#" method="post" class="main__form__item01__value">
+                    <textarea name="comment" cols="10" rows="2" class="value02" id="ocrResult02"></textarea>
+                    <input type="file" name="example" accept="image/jpeg, image/png" id="uploader02" value="">
+                </form>
             </div>
             <!-- answer -->
             <div class="mian__ans">
@@ -42,24 +45,26 @@
                     <!-- canvas -->
                     <canvas id="board" width="150" height="224"></canvas>
                     <script>
-                    window.onload = ()=>{
-                    // canvas準備
-                    const board = document.querySelector("#board"); 
-                    const ctx = board.getContext("2d");
+                        window.onload = () =>
+                        {
+                            // canvas準備
+                            const board = document.querySelector("#board");
+                            const ctx = board.getContext("2d");
 
-                    // 画像読み込み
-                    const chara = new Image();
-                    chara.src = "/images/lp/lp_light_empty.png";  // 画像のURLを指定
-                    chara.onload = () => {
-                        ctx.drawImage(chara, 0, 0);
-                    };
+                            // 画像読み込み
+                            const chara = new Image();
+                            chara.src = "/images/lp/lp_light_empty.png";  // 画像のURLを指定
+                            chara.onload = () =>
+                            {
+                                ctx.drawImage(chara, 0, 0);
+                            };
 
-                    ctx.fillStyle = '#ccc';
-                        ctx.strokeStyle = 'red';
-                        ctx.rect(25, 25, 100, 100);
-                        ctx.fill();
-                        ctx.stroke();
-                    };
+                            ctx.fillStyle = '#ccc';
+                            ctx.strokeStyle = 'red';
+                            ctx.rect(25, 25, 100, 100);
+                            ctx.fill();
+                            ctx.stroke();
+                        };
                     </script>
                 </div>
 
@@ -70,6 +75,8 @@
     <footer>
 
     </footer>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="./js/Tesseract.js"></script>
 </body>
+
 </html>

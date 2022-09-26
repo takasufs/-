@@ -1,7 +1,69 @@
-@use "//scss/color" as color;
+@use "../scss/color" as color;
 
   .header{
-    background-color: color $color_header;
+    height: 89px; //XDでは、88.77のところを小数点切り上げで、整数に変更
+    background-color: color.$color-header;//#FFF450
+    &__inner{
+
+    }
+  }
+
+  .main{
+    background-color:color.$color-main;//#EBFFF9
+    font-size: 15px;
+    &__inner{
+
+    }
+    &__form{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      &__value{
+        max-width: 45%;
+        .value01{
+          width: 142px;
+          height: 124px;
+          background-color: #fff;
+          border-radius: (20px);
+          border: 3px solid color.$color-form;//#165DA3
+        }
+
+        .value02{
+          width: 142px;
+          height: 124px;
+          background-color: #fff;
+          border-radius: (20px);
+          border: 3px solid color.$color-form;//#165DA3
+        }
+
+        .upbtn{
+          padding: (17em/15) (17em/15);
+          background-color: #384878;
+          cursor: pointer;
+          border-radius: 100%;
+        }
+        input[type="file"] {
+          display: none;
+        }
+
+        #ocrResult{
+        }
+        #ocrResult02{
+
+        }
+
+        #uploader{
+          max-width: 100%;
+        }
+        #uploader02{
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .footer{
+    background-color:color.$color-main;//#EBFFF9
     &__inner{
 
     }

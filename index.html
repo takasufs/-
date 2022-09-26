@@ -21,16 +21,22 @@
         
         <div class="main__inner">
             <!-- form -->
-            <div class="mian__form">
+            <div class="main__form">
                 <!-- value01 -->
-                <form action="#" method="post" class="main__form__item01__value">
+                <form action="#" method="post" class="main__form__value">
                     <textarea name="comment" cols="10" rows="2" class="value01" id="ocrResult"></textarea>
-                    <input type="file" name="example" accept="image/jpeg, image/png" id="uploader" value="">
+                    <!-- ファイルを選択 -->
+                    <label class="upbtn">
+                        <input type="file" name="example" accept="image/jpeg, image/png" id="uploader"  value="">
+                    </label>
                 </form>
                 <!-- value02 -->
-                <form action="#" method="post" class="main__form__item01__value">
+                <form action="#" method="post" class="main__form__value">
                     <textarea name="comment" cols="10" rows="2" class="value02" id="ocrResult02"></textarea>
-                    <input type="file" name="example" accept="image/jpeg, image/png" id="uploader02" value="">
+                    <!-- ファイルを選択 -->
+                    <label class="upbtn">
+                        <input type="file" name="example" accept="image/jpeg, image/png" id="uploader02" value="">
+                    </label>
                 </form>
             </div>
             <!-- answer -->

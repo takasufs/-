@@ -8,11 +8,6 @@
     <title>ビリビリチェッカー（仮）</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <<<<<<< HEAD <style>
-        canvas {}
-        </style>
-        =======
-        >>>>>>> ed0cdb4d9c5a39c93c17bb41bb3a5268e6982f5c
 </head>
 
 <body>
@@ -51,31 +46,21 @@
                             // canvas準備
                             const board = document.querySelector("#board");
                             const ctx = board.getContext("2d");
-
+                            ctx.fillRect(0, 0, 10, 10);
+                            ctx.fillStyle = "#000";
                             // 画像読み込み
                             const chara = new Image();
-                            chara.src = "/images/lp/lp_light_empty.png";  // 画像のURLを指定
+                            chara.src = "./images/lp/lp_light_empty.png";  // 画像のURLを指定
                             chara.onload = () =>
                             {
                                 ctx.drawImage(chara, 0, 0);
                             };
-                        };
-                        window.onload = () =>
-                        {
-                            // canvas準備
-                            const board = document.querySelector("#board");
-                            const ctx = board.getContext("2d");
-                            context.fillStyle = "#FF9050";
-
-                            // 画像読み込み
-                            const chara = new Image();
-                            chara.src = "/images/lp/lp_light_empty.png";  // 画像のURLを指定
-                            chara.onload = () =>
+                            const chara02 = new Image();
+                            chara02.src = "./images/lp/lp_light_empty.png";  // 画像のURLを指定
+                            chara02.onload = () =>
                             {
-                                ctx.drawImage(chara, 0, 0);
+                                ctx.drawImage(chara02, 0, 0);
                             };
-
-
                         };
                     </script>
                     <p class="mian__ans__value__txt">設定してください</p>

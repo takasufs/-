@@ -45,6 +45,7 @@
                     <!-- canvas -->
                     <canvas id="board" width="150" height="224"></canvas>
                     <script>
+<<<<<<< Updated upstream
                         window.onload = () =>
                         {
                             // canvas準備
@@ -59,6 +60,23 @@
                                 ctx.drawImage(chara, 0, 0);
                             };
                         };
+=======
+                    window.onload = ()=>{
+                    // canvas準備
+                    const board = document.querySelector("#board"); 
+                    const ctx = board.getContext("2d");
+                    context.fillStyle = "#FF9050";
+
+                    // 画像読み込み
+                    const chara = new Image();
+                    chara.src = "/images/lp/lp_light_empty.png";  // 画像のURLを指定
+                    chara.onload = () => {
+                        ctx.drawImage(chara, 0, 0);
+                    };
+
+
+                    };
+>>>>>>> Stashed changes
                     </script>
                     <p class="mian__ans__value__txt">設定してください</p>
                 </div>

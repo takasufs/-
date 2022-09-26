@@ -1,0 +1,8 @@
+@use "//scss/color" as color;
+
+  .header{
+    background-color: color $color_header;
+    &__inner{
+
+    }
+  }

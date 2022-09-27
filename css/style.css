@@ -1,3 +1,27 @@
+.h1 {
+  font-size: 26px;
+}
+
+.h2 {
+  font-size: 24px;
+}
+
+.h3 {
+  font-size: 22px;
+}
+
+.h4 {
+  font-size: 20px;
+}
+
+.h5 {
+  font-size: 18px;
+}
+
+.h6 {
+  font-size: 16px;
+}
+
 .header {
   height: 89px;
   background-color: #FFF450;
@@ -63,7 +87,13 @@
 .main__form__value #uploader02 {
   max-width: 100%;
 }
-
+.main__ans__txt {
+  text-align: center;
+  padding-top: 1.2666666667em;
+}
 .footer {
   background-color: #EBFFF9;
+}
+.footer__inner {
+  padding-top: 1.2666666667em;
 }

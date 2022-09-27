@@ -80,11 +80,14 @@
       }
     }
     &__ans{
-      &__ttl{
-
+      &__txt{
+        text-align: center;
+        padding-top: (19em/15);
       }
       &__value{
-
+        &__canvas{
+          
+        }
       }
     }
   }

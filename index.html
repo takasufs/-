@@ -27,7 +27,7 @@
                     <textarea name="comment" cols="10" rows="2" class="value01" id="ocrResult"></textarea>
                     <!-- ファイルを選択 -->
                     <label class="upbtn">
-                        <input type="file" name="example" accept="image/jpeg, image/png" id="uploader"  value="">
+                        <input type="file" name="example" accept="image/jpeg, image/png" id="uploader" value="">
                     </label>
                 </form>
                 <!-- value02 -->
@@ -52,20 +52,20 @@
                             // canvas準備
                             const board = document.querySelector("#board");
                             const ctx = board.getContext("2d");
-                            ctx.fillRect(0, 0, 10, 10);
+                            ctx.fillRect(10, 10, 0, 10);
                             ctx.fillStyle = "#000";
                             // 画像読み込み
-                            const chara = new Image();
-                            chara.src = "./images/lp/lp_light_empty.png";  // 画像のURLを指定
-                            chara.onload = () =>
-                            {
-                                ctx.drawImage(chara, 0, 0);
-                            };
                             const chara02 = new Image();
-                            chara02.src = "./images/lp/lp_light_empty.png";  // 画像のURLを指定
+                            chara02.src = "./images/lp/lp_light_upper.png";  // 画像のURLを指定
                             chara02.onload = () =>
                             {
                                 ctx.drawImage(chara02, 0, 0);
+                            };
+                            const chara = new Image();
+                            chara.src = "./images/lp/lp_light_bottom.png";  // 画像のURLを指定
+                            chara.onload = () =>
+                            {
+                                ctx.drawImage(chara, 10, 90);
                             };
                         };
                     </script>

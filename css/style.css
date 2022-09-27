@@ -22,8 +22,12 @@
   font-size: 16px;
 }
 
+body {
+  max-height: 812px;
+}
+
 .header {
-  height: 89px;
+  height: 70px;
   background-color: #FFF450;
 }
 .main {
@@ -91,9 +95,126 @@
   text-align: center;
   padding-top: 1.2666666667em;
 }
+.main__ans__value {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+}
+.main__ans__value__canvas {
+  margin: 0 auto;
+}
+.main__ans__value__txt {
+  padding-top: 1.4666666667em;
+  padding-bottom: 1.8666666667em;
+  text-align: center;
+}
+.main__rst {
+  width: 198px;
+  background-color: #D0D02F;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: 38px;
+  margin: 0 auto;
+  margin-top: 4.5333333333em;
+  padding: 0.9333333333em 4.6em;
+}
+.main__rst__btn {
+  line-height: 1.733;
+  vertical-align: top;
+}
+
 .footer {
   background-color: #EBFFF9;
 }
 .footer__inner {
-  padding-top: 1.2666666667em;
+  padding-top: 0.5333333333em;
+}
+.footer__nav__gnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.footer__nav__gnav__item {
+  list-style: none;
+}
+.footer__nav__gnav .gnav01 {
+  width: 133px;
+  height: 133px;
+  position: relative;
+}
+.footer__nav__gnav .gnav01__link {
+  width: 133px;
+  height: 133px;
+  position: absolute;
+  top: 0.5333333333em;
+  left: -1.6em;
+  background-color: #FFF450;
+  border-radius: 50%;
+}
+.footer__nav__gnav .gnav01__img {
+  width: 42px;
+  height: 39px;
+  position: absolute;
+  top: 1.4em;
+  left: 3.0666666667em;
+}
+.footer__nav__gnav .gnav01__txt {
+  font-size: 8px;
+  position: absolute;
+  top: 8.25em;
+  left: 7.25em;
+}
+.footer__nav__gnav .gnav02 {
+  width: 61px;
+  height: 61px;
+  position: relative;
+}
+.footer__nav__gnav .gnav02__link {
+  width: 61px;
+  height: 61px;
+  position: absolute;
+  top: 1.8em;
+  left: 0.4666666667em;
+  background-color: #FFF450;
+  border-radius: 50%;
+}
+.footer__nav__gnav .gnav02__img {
+  width: 21px;
+  height: 17px;
+  position: absolute;
+  top: 1.3333333333em;
+  left: 1.1333333333em;
+}
+.footer__nav__gnav .gnav02__txt {
+  font-size: 8px;
+  position: absolute;
+  top: 5.125em;
+  left: 3em;
+}
+.footer__nav__gnav .gnav03 {
+  width: 61px;
+  height: 61px;
+  position: relative;
+}
+.footer__nav__gnav .gnav03__link {
+  width: 61px;
+  height: 61px;
+  position: absolute;
+  top: 1.8em;
+  left: 1.2em;
+  background-color: #FFF450;
+  border-radius: 50%;
+}
+.footer__nav__gnav .gnav03__img {
+  width: 21px;
+  height: 17px;
+  position: absolute;
+  top: 1.3333333333em;
+  left: 1.1333333333em;
+}
+.footer__nav__gnav .gnav03__txt {
+  font-size: 8px;
+  position: absolute;
+  top: 5.125em;
+  left: 1.875em;
 }

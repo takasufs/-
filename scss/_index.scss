@@ -1,7 +1,9 @@
-@use "../scss/color" as color;
-
+@use "../scss/base/color" as color;
+body{
+  max-height: 812px;
+}
   .header{
-    height: 89px; //XDでは、88.77のところを小数点切り上げで、整数に変更
+    height: 70px; 
     background-color: color.$color-header;//#FFF450
     &__inner{
 
@@ -85,9 +87,33 @@
         padding-top: (19em/15);
       }
       &__value{
+        width: 150px;
+        height: auto;
+        margin:0 auto;
         &__canvas{
-          
+          // position: absolute;
+          margin:0 auto;
         }
+        &__txt{
+          padding-top: (22em/15);
+          padding-bottom: (28em/15);
+          text-align: center;
+        }
+      }
+    }
+    &__rst{
+      width: 198px;
+      background-color: color.$color-rst-btn;//#D0D02F
+      text-align: center;
+      vertical-align:baseline;
+      border-radius: 38px;
+      margin: 0 auto;
+      margin-top:(68em/15);
+      padding: (14em/15) (69em/15);
+
+      &__btn{
+        line-height: 1.733;
+        vertical-align: top;
       }
     }
   }
@@ -95,6 +121,112 @@
   .footer{
     background-color:color.$color-main;//#EBFFF9
     &__inner{
-      padding-top: (19em/15);
+      padding-top: (8em/15);
+    }
+    &__nav{
+      &__gnav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+
+        &__item{
+          list-style: none;
+          &__link{
+
+          }
+          &__img{
+
+          }
+          &__txt{
+            
+          }
+
+        }
+        .gnav01{
+          width: 133px;
+          height: 133px;
+          position: relative;
+          &__link{
+            width: 133px;
+            height: 133px;
+            position: absolute;
+            top: (8em/15);
+            left: (-24em/15);
+            background-color: #FFF450;
+            border-radius: 50%;
+          }
+          &__img{
+            width: 42px;
+            height: 39px;
+            position: absolute;
+            top: (21em/15);
+            left: (46em/15);
+          }
+          &__txt{
+            font-size: 8px;
+            position: absolute;
+            top: (66em/8);
+            left: (58em/8);
+            
+          }
+        }
+
+        .gnav02{
+          width: 61px;
+          height: 61px;
+          position: relative;
+          
+          &__link{
+            width: 61px;
+            height: 61px;
+            position: absolute;
+            top: (27em/15);
+            left: (7em/15);
+            background-color: #FFF450;
+            border-radius: 50%;
+          }
+          &__img{
+            width: 21px;
+            height: 17px;
+            position: absolute;
+            top: (20em/15);
+            left: (17em/15);
+          }
+          &__txt{
+            font-size: 8px;
+            position: absolute;
+            top: (41em/8);
+            left: (24em/8);
+          }
+        }
+        .gnav03{
+          width: 61px;
+          height: 61px;
+          position: relative;
+          
+          &__link{
+            width: 61px;
+            height: 61px;
+            position: absolute;
+            top: (27em/15);
+            left: (18em/15);
+            background-color: #FFF450;
+            border-radius: 50%;
+          }
+          &__img{
+            width: 21px;
+            height: 17px;
+            position: absolute;
+            top: (20em/15);
+            left: (17em/15);
+          }
+          &__txt{
+            font-size: 8px;
+            position: absolute;
+            top: (41em/8);
+            left: (15em/8);
+          }
+        }
+      }
     }
   }

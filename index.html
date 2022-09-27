@@ -47,7 +47,8 @@
                 <!-- 結果 -->
                 <div class="main__ans__value">
                     <!-- canvas -->
-                    <canvas id="board" width="150" height="224"></canvas>
+                    <canvas id="board" width="150" height="224" class="main__ans__value__canvas"></canvas>
+                    <!-- canvas内容 -->
                     <script>
                         window.onload = () =>
                         {
@@ -84,28 +85,10 @@
     <footer class="footer">
         <div class="footer__inner">
             <nav class="footer__nav">
-                <ul class="fooer__nav__gnav">
-                    <li class="footer__nav__gnav__item gnav01">
-                        <img src="" alt="" class="footer__nav__gnav__item__img gnav01__img"><br>
-                        <p class="footer__nav__gnav__item__txt gnav01__txt small">HOME</p>
-                    </li>
-                    <li class="footer__nav__gnav__item gnav02">
-                        <img src="" alt="" class="footer__nav__gnav__item__img gnav02__img"><br>
-                        <p class="footer__nav__gnav__item__txt gnav02__txt small">List</p>
-                    </li>
-                    <li class="footer__nav__gnav__item gnav03">
-                        <img src="" alt="" class="footer__nav__gnav__item__img gnav03__img"><br>
-                        <p class="footer__nav__gnav__item__txt gnav03__txt small">Ranking</p>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="footer__inner">
-            <nav class="footer__nav">
-                <ul class="fooer__nav__gnav">
+                <ul class="footer__nav__gnav">
                     <!-- HOME -->
                     <li class="footer__nav__gnav__item gnav01">
-                        <a href="#" class="footer__nav__gnav__item gnav01__link">
+                        <a href="#" class="footer__nav__gnav__item__link gnav01__link">
                             <img src="./images/comon/footer_nav_icon_HOME.png" alt=""
                                 class="footer__nav__gnav__item__img gnav01__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav01__txt small">HOME</p>
@@ -113,7 +96,7 @@
                     </li>
                     <!-- LIST -->
                     <li class="footer__nav__gnav__item gnav02">
-                        <a href="#" class="footer__nav__gnav__item gnav02__link">
+                        <a href="#" class="footer__nav__gnav__item__link gnav02__link">
                             <img src="./images/comon/footer_nav_icon_List.png" alt=""
                                 class="footer__nav__gnav__item__img gnav02__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav02__txt small">List</p>
@@ -121,7 +104,7 @@
                     </li>
                     <!-- RANKING -->
                     <li class="footer__nav__gnav__item gnav03">
-                        <a href="#" class="footer__nav__gnav__item gnav03__link">
+                        <a href="#" class="footer__nav__gnav__item__link gnav03__link">
                             <img src="./images/comon/footer_nav_icon_Ranking.png" alt=""
                                 class="footer__nav__gnav__item__img gnav03__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav03__txt small">Ranking</p>

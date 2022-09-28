@@ -6,32 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>（仮）</title>
+    <link rel="stylesheet" href="./css/cropper.css">
 </head>
 
 <body>
 
-    <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
     <div>
         <!--ファイル選択ボタン-->
         <input type="file" id="uploader" value="">
-
     </div>
+
+    <div class="cropper-area">
+        <img id="cropper-img" src="">
+    </div>
+
     <div><br>
         <!--結果を表示するテキストエリア-->
         <textarea id="ocrResult" style="height:100px;width:100px;"></textarea>
     </div>
-
-
-    <div>
-        <!--ファイル選択ボタン-->
-        <input type="file" id="uploader02" value="">
-    </div>
-    <div><br>
-        <!--結果を表示するテキストエリア-->
-        <textarea id="ocrResult02" style="height: 100px;width:100px;"></textarea>
-    </div>
+    <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <script src="./js/Tesseract.js"></script>
+    <script src="./js/cropper.js"></script>
 </body>
 
 </html>

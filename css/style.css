@@ -1,3 +1,7 @@
+body {
+  line-height: 1;
+}
+
 .h1 {
   font-size: 26px;
 }
@@ -74,7 +78,7 @@ body {
   position: absolute;
   display: inline-block;
   border-radius: 100%;
-  top: 18.6666666667em;
+  top: 16.8em;
 }
 .main__form__value .upbtn01 {
   left: 9.0666666667em;
@@ -106,7 +110,6 @@ body {
 .main__ans__value__txt {
   padding-top: 1.4666666667em;
   padding-bottom: 1.8666666667em;
-  text-align: center;
 }
 .main__rst {
   width: 198px;

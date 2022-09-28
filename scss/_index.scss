@@ -8,6 +8,25 @@ body{
     &__inner{
 
     }
+    &__nav{
+
+      &__gnav{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        &__item{
+          &__link{
+
+          }
+          &__icon{
+
+          }
+          &__bell{
+
+          }
+        }
+      }
+    }
   }
 
   .main{

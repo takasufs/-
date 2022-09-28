@@ -49,14 +49,16 @@ $(function () {
     $(function () {
         $("div.btn").off(`click`);
         $("div.btn").on(`click`,function (e) {
-            // $("ul.main__record__table").empty();
+            $(".main__record__table__result").empty();
             // ulにliを追加
             $("ul.main__record__table").append('<li class="main__record__table__result"></li>');
 
             // liにp(day)を追加
+            // $(".main__record__table__result__day").empty();
             $("li.main__record__table__result").append(`<p class="main__record__table__result__day">${days}</p>`);
             
             // liにp(w)を追加
+            // $(".main__record__table__result__watt").empty();
             $("li.main__record__table__result").append(`<p class="main__record__table__result__watt"><span class="h4">${value}</span></p>`);
         })
     })

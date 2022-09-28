@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eneka</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header class="header">
@@ -15,12 +15,13 @@
     <main class="main">
         <div class="main__inner">
             <div class="main__record">
-                <h4 class="main__record__ttl">記録</h4>
-                <ul class="main__recod__table">
-                    <!-- liやliの中身の値はjsで生成、表示 -->
-                    <!-- <li class="main__recod__table__result"> 
-                        <p class="main__recod__table__result__day">00/00/00</p>
-                        <p class="main__recod__table__result__Watt">消費量　<span class="h4">500</span>  W</p>
+                <h4 class="main__record__ttl h4">記録</h4>
+                <div class="btn">ボタン</div>
+                <ul class="main__record__table">
+                    <!-- liやliの中身の値はjsで生成表示 -->
+                    <!-- <li class="main__record__table__result"> 
+                        <p class="main__record__table__result__day">00/00/00</p>
+                        <p class="main__record__table__result__watt"><span class="h4">500</span></p>
                     </li> -->
                 </ul>
             </div>
@@ -28,7 +29,10 @@
         </div>
     </main>
     <footer class="footer">
-
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="/js/record.js"></script>
     </footer>
+
+
 </body>
 </html>

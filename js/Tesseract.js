@@ -8,7 +8,7 @@ const recognize = function (evt) {
         return;
     }
     const img = document.getElementById('cropper-img');
-    files[0].src = img.src
+    img.src = files[0]
 
     // //Tesseract.jsの実行
     // Tesseract

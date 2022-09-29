@@ -1,6 +1,6 @@
 @use "../scss/base/color" as color;
 body{
-  max-height: 812px;
+  height: 812px;
 }
   .header{
     height: 70px; 
@@ -127,7 +127,7 @@ body{
       vertical-align:baseline;
       border-radius: 38px;
       margin: 0 auto;
-      margin-top:(68em/15);
+      margin-top:(40em/15);
       padding: (14em/15) (69em/15);
 
       &__btn{
@@ -162,31 +162,38 @@ body{
 
         }
         .gnav01{
-          width: 133px;
-          height: 133px;
+          width: 108px;
+          height: 86px;
           position: relative;
           &__link{
-            width: 133px;
-            height: 133px;
+            width: 108px;
+            height: 86px;
+            position: relative;
+            z-index: 11;
+          }
+          &__link::after{
+            content: "";
             position: absolute;
-            top: (8em/15);
-            left: (-24em/15);
-            background-color: #FFF450;
-            border-radius: 50%;
+            border: solid #FFF450;
+            border-width: 82px 108px 0 0;
+            border-top-right-radius: 100%;
+            padding-left: 50%;
+            z-index: 10;
           }
           &__img{
             width: 42px;
             height: 39px;
             position: absolute;
-            top: (21em/15);
-            left: (46em/15);
+            top: (30em/15);
+            left: (20em/15);
+            z-index: 11;
           }
           &__txt{
             font-size: 8px;
             position: absolute;
-            top: (66em/8);
-            left: (58em/8);
-            
+            top: (75em/8);
+            left: (26em/8);
+            z-index: 11;
           }
         }
 

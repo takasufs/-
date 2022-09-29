@@ -7,10 +7,8 @@ const recognize = function (evt) {
     }
     reader.readAsDataURL(evt.target.files[0]);
 
-    var cropperImg = document.getElementById('cropper-img');
-    console.log(cropperImg);
-    var cropper = new Cropper(cropperImg);
-    console.log(cropper);
+    var cropper = new Cropper(document.getElementById('cropper-img'));
+
     document.getElementById('crop-btn').addEventListener('click', function () {
         resultImgUrl = cropper.getCroppedCanvas().toDataURL();
         var result = document.getElementById('result-img');

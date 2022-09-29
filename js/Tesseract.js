@@ -1,5 +1,23 @@
 //recognize関数の宣言
 const recognize = function (evt) {
+    const img = document.getElementById('cropper-img');
+    var reader = new FileReader();
+    reader.onload = function (evt) {
+        img.src = evt.target.result;
+    }
+    reader.readAsDataURL(evt.target.files[0]);
+
+    var cropperImg = document.getElementById('cropper-img');
+    console.log(cropperImg);
+    var cropper = new Cropper(cropperImg);
+    console.log(cropper);
+    document.getElementById('crop-btn').addEventListener('click', function () {
+        resultImgUrl = cropper.getCroppedCanvas().toDataURL();
+        var result = document.getElementById('result-img');
+        result.src = resultImgUrl;
+    });
+
+
     //読み込むファイルの宣言
     const files = evt.target.files;
     //ファイルの中身がないときには実行しない
@@ -7,9 +25,6 @@ const recognize = function (evt) {
     {
         return;
     }
-    const img = document.getElementById('cropper-img');
-    img.src = files[0]
-
     // //Tesseract.jsの実行
     // Tesseract
     //     //OCR機能を実行する際の読み込むファイルや言語を設定（言語はlang: ''の中身をengやjpnに変更することで英語や日本語にすることが可能です）

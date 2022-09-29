@@ -114,6 +114,7 @@ li {
   margin: 0 auto;
 }
 .main__ans__value__txt {
+  text-align: center;
   padding-top: 1.4666666667em;
   padding-bottom: 1.8666666667em;
 }
@@ -280,14 +281,48 @@ li {
   font-size: 15px;
 }
 
-.main__rec-last::before {
+.main__rec {
+  padding-top: 2em;
+  padding-bottom: 6.0666666667em;
+}
+.main__rec-last__ttl::before {
   content: "前回の記録";
 }
-.main__rec-now::before {
+.main__rec__compar {
+  width: 188px;
+  height: 142px;
+  background-color: #FEFFE8;
+  text-align: center;
+  margin-top: 2.6666666667em;
+  margin-bottom: 14.2em;
+  border-radius: 19px;
+}
+.main__rec__compar__txt {
+  padding-top: 1.3333333333em;
+  padding-bottom: 0.6em;
+}
+.main__rec__compar__valu {
+  font-size: 40px;
+  padding-top: 0.2em;
+  padding-bottom: 1.225em;
+}
+.main__rec__compar__valu::after {
+  content: "W";
+}
+.main__rec-now__ttl::before {
   content: "前回の記録";
 }
 .main .rec {
   width: 327px;
   height: 65px;
   background-color: #fff;
+  padding: 0.75em 0;
+  border-radius: 20px;
+}
+.main .rec__ttl .strong {
+  font-size: 30px;
+  padding-left: 2.8666666667em;
+}
+.main .rec__ttl::after {
+  content: "W";
 }

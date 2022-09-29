@@ -3,37 +3,61 @@
         
     }
     &__rec{
+        padding-top: (30em/15);
+        padding-bottom: (91em/15);
         &-last{
-            &__ttl{
 
+            &__ttl{
+            }
+            &__ttl::before{
+                content: "前回の記録";
             }
         }
-        &-last::before{
-            content: "前回の記録";
-        }
-        &_compar{
-            &__txt{
 
+        &__compar{
+            width: 188px;
+            height: 142px;
+            background-color: #FEFFE8;
+            text-align: center;
+            margin-top: (40em/15);
+            margin-bottom: (213em/15);
+            border-radius: 19px;
+            &__txt{
+                padding-top: (20em/15);
+                padding-bottom: (9em/15);
             }
             &__valu{
-
+                font-size: 40px;
+                padding-top: (8em/40);
+                padding-bottom: (49em/40);
+            }
+            &__valu::after{
+                content: "W";
             }
         }
         &-now{
             &__ttl{
 
             }
-        }
-        &-now::before{
-            content: "前回の記録";
+            &__ttl::before{
+                content: "前回の記録";
+            }
         }
     }
     .rec{
         width: 327px;
         height: 65px;
         background-color: #fff;
+        padding: (15em/20) 0;
+        border-radius: 20px;
         &__ttl{
-    
+            .strong{
+                font-size: 30px;
+                padding-left: (86em/30);
+            }
+        }
+        &__ttl::after{
+            content: "W";
         }
     }
 

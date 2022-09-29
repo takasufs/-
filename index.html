@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ビリビリチェッカー（仮）</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -15,12 +15,13 @@
         <div class="header__inner">
             <nav class="header__nav">
                 <ul class="header__nav__gnav">
-                    <li class="header__nav__gnav__item"><a href="/index.html" class="header__nav__gnav__item__link"><img
-                                src="./images/comon/app_icon_demo.png" alt="" class="header__nav__gnav__item__icon"></a>
-                    </li>
-                    <li class="header__nav__gnav__item"><a href="#" class="header__nav__gnav__item__link"><img
-                                src="./images/comon/header_bell_icon.png" alt=""
-                                class="header__nav__gnav__item__bell"></a></li>
+                        <li class="header__nav__gnav__item"><a href="/index.html"
+                                class="header__nav__gnav__item__link"><img src="./images/comon/app_icon_demo.png" alt=""
+                                    class="header__nav__gnav__item__icon"></a>
+                        </li>
+                        <li class="header__nav__gnav__item"><a href="#" class="header__nav__gnav__item__link"><img
+                                    src="./images/comon/header_bell_icon.png" alt=""
+                                    class="header__nav__gnav__item__bell"></a></li>
                 </ul>
             </nav>
         </div>
@@ -44,9 +45,9 @@
                 <form action="#" method="post" class="main__form__value">
                     <p class="main__form__value__txt">②タイマー</p>
                     <div name="comment" cols="10" rows="2" class="value02" id="timer">00:00</div>
-                    <div class="upbtn upbtn02" id="start"></div>
-                    <div class="upbtn upbtn02" id="stop"></div>
-                    <div class="upbtn upbtn02" id="reset"></div>
+                    <img src="./images/lp/lp_btn_start.png" class="upbtn upbtn02" id="start">
+                    <img src="./images/lp/lp_btn_stop.png" class="upbtn upbtn02" id="stop">
+                    <img src="./images/lp/lp_btn_reset.png" class="upbtn upbtn02" id="reset">
                 </form>
             </div>
             <!-- answer -->
@@ -67,13 +68,13 @@
                             ctx.fillStyle = "#000";
                             // 画像読み込み
                             const chara02 = new Image();
-                            chara02.src = "./images/lp/lp_light_upper.png";  // 画像のURLを指定
+                            chara02.src = "/images/lp/lp_light_upper.png";  // 画像のURLを指定
                             chara02.onload = () =>
                             {
                                 ctx.drawImage(chara02, 0, 0);
                             };
                             const chara = new Image();
-                            chara.src = "./images/lp/lp_light_bottom.png";  // 画像のURLを指定
+                            chara.src = "/images/lp/lp_light_bottom.png";  // 画像のURLを指定
                             chara.onload = () =>
                             {
                                 ctx.drawImage(chara, 16, 138);
@@ -96,6 +97,7 @@
                 <ul class="footer__nav__gnav">
                     <!-- HOME -->
                     <li class="footer__nav__gnav__item gnav01">
+
                         <a href="/index.html" class="footer__nav__gnav__item__link gnav01__link">
                             <img src="./images/comon/footer_nav_icon_HOME.png" alt=""
                                 class="footer__nav__gnav__item__img gnav01__img"><br>
@@ -106,14 +108,17 @@
                     <li class="footer__nav__gnav__item gnav02">
                         <a href="/record/index.html" class="footer__nav__gnav__item__link gnav02__link">
                             <img src="./images/comon/footer_nav_icon_List.png" alt=""
+
                                 class="footer__nav__gnav__item__img gnav02__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav02__txt small">List</p>
                         </a>
                     </li>
                     <!-- RANKING -->
                     <li class="footer__nav__gnav__item gnav03">
+
                         <a href="/ranking/index.html" class="footer__nav__gnav__item__link gnav03__link">
                             <img src="./images/comon/footer_nav_icon_Ranking.png" alt=""
+
                                 class="footer__nav__gnav__item__img gnav03__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav03__txt small">Ranking</p>
                         </a>
@@ -125,8 +130,8 @@
 
     <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
-    <script src="./js/Tesseract.js"></script>
-    <script src="./js/timers_switches.js"></script>
+    <script src="/js/Tesseract.js"></script>
+    <script src="/js/timers_switches.js"></script>
 
 </body>
 

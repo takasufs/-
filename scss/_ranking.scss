@@ -1,0 +1,40 @@
+.main{
+    &__inner{
+        
+    }
+    &__rec{
+        &-last{
+            &__ttl{
+
+            }
+        }
+        &-last::before{
+            content: "前回の記録";
+        }
+        &_compar{
+            &__txt{
+
+            }
+            &__valu{
+
+            }
+        }
+        &-now{
+            &__ttl{
+
+            }
+        }
+        &-now::before{
+            content: "前回の記録";
+        }
+    }
+    .rec{
+        width: 327px;
+        height: 65px;
+        background-color: #fff;
+        &__ttl{
+    
+        }
+    }
+
+}

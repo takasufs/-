@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 body {
   line-height: 1;
 }
@@ -35,30 +36,37 @@ li {
   height: 70px;
   background-color: #FFF450;
 }
+
 .header__nav__gnav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .main {
   background-color: #EBFFF9;
   font-size: 15px;
 }
+
 .main__inner {
   padding: 0 1.6em;
 }
+
 .main__form {
   display: flex;
   justify-content: center;
   text-align: center;
 }
+
 .main__form__value {
   width: 50%;
 }
+
 .main__form__value__txt {
   padding-top: 3.2666666667em;
   padding-bottom: 1.0666666667em;
 }
+
 .main__form__value .value01 {
   width: 142px;
   height: 124px;
@@ -68,6 +76,7 @@ li {
   position: relative;
   margin-right: 1.1333333333em;
 }
+
 .main__form__value .value02 {
   width: 142px;
   height: 124px;
@@ -77,47 +86,58 @@ li {
   position: relative;
   margin-left: 1.1333333333em;
 }
+
 .main__form__value .upbtn {
   padding: 1.1333333333em 1.1333333333em;
-  background-color: #384878;
+  background-color: #FFF450;
   cursor: pointer;
   position: absolute;
   display: inline-block;
   border-radius: 100%;
   top: 16.8em;
 }
+
 .main__form__value .upbtn01 {
   left: 9.0666666667em;
 }
+
 .main__form__value .upbtn02 {
   left: 21.1333333333em;
 }
+
 .main__form__value input[type=file] {
   display: none;
 }
+
 .main__form__value #uploader {
   max-width: 100%;
 }
+
 .main .inactive {
   display: none !important;
 }
+
 .main__ans__txt {
   text-align: center;
   padding-top: 1.2666666667em;
 }
+
 .main__ans__value {
   width: 150px;
   height: auto;
   margin: 0 auto;
 }
+
 .main__ans__value__canvas {
   margin: 0 auto;
 }
+
 .main__ans__value__txt {
   text-align: center;
   padding-top: 1.4666666667em;
   padding-bottom: 1.8666666667em;
 }
+
 .main__rst {
   width: 198px;
   background-color: #D0D02F;
@@ -128,6 +148,7 @@ li {
   margin-top: 2.6666666667em;
   padding: 0.9333333333em 4.6em;
 }
+
 .main__rst__btn {
   line-height: 1.733;
   vertical-align: top;
@@ -136,28 +157,34 @@ li {
 .footer {
   background-color: #EBFFF9;
 }
+
 .footer__inner {
   padding-top: 0.5333333333em;
 }
+
 .footer__nav__gnav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
 .footer__nav__gnav__item {
   list-style: none;
 }
+
 .footer__nav__gnav .gnav01 {
   width: 108px;
   height: 86px;
   position: relative;
 }
+
 .footer__nav__gnav .gnav01__link {
   width: 108px;
   height: 86px;
   position: relative;
   z-index: 11;
 }
+
 .footer__nav__gnav .gnav01__link::after {
   content: "";
   position: absolute;
@@ -167,6 +194,7 @@ li {
   padding-left: 50%;
   z-index: 10;
 }
+
 .footer__nav__gnav .gnav01__img {
   width: 42px;
   height: 39px;
@@ -175,6 +203,7 @@ li {
   left: 1.3333333333em;
   z-index: 11;
 }
+
 .footer__nav__gnav .gnav01__txt {
   font-size: 8px;
   position: absolute;
@@ -182,11 +211,13 @@ li {
   left: 3.25em;
   z-index: 11;
 }
+
 .footer__nav__gnav .gnav02 {
   width: 61px;
   height: 61px;
   position: relative;
 }
+
 .footer__nav__gnav .gnav02__link {
   width: 61px;
   height: 61px;
@@ -196,6 +227,7 @@ li {
   background-color: #FFF450;
   border-radius: 50%;
 }
+
 .footer__nav__gnav .gnav02__img {
   width: 21px;
   height: 17px;
@@ -203,17 +235,20 @@ li {
   top: 1.3333333333em;
   left: 1.1333333333em;
 }
+
 .footer__nav__gnav .gnav02__txt {
   font-size: 8px;
   position: absolute;
   top: 5.125em;
   left: 3em;
 }
+
 .footer__nav__gnav .gnav03 {
   width: 61px;
   height: 61px;
   position: relative;
 }
+
 .footer__nav__gnav .gnav03__link {
   width: 61px;
   height: 61px;
@@ -223,6 +258,7 @@ li {
   background-color: #FFF450;
   border-radius: 50%;
 }
+
 .footer__nav__gnav .gnav03__img {
   width: 21px;
   height: 17px;
@@ -230,6 +266,7 @@ li {
   top: 1.3333333333em;
   left: 1.1333333333em;
 }
+
 .footer__nav__gnav .gnav03__txt {
   font-size: 8px;
   position: absolute;
@@ -243,39 +280,47 @@ li {
   background-color: #01FFB1;
   border-radius: 26px;
 }
+
 .main__record__ttl {
   text-align: center;
   padding-top: 1.3em;
   padding-bottom: 1.25em;
 }
+
 .main__record__table {
   padding: 0 0.6666666667em;
 }
+
 .main__record__table__result {
   width: 170px;
   height: 100px;
   background-color: #fff;
   border-radius: 26px;
 }
+
 .main__record__table__result__day {
   text-align: center;
   padding-top: 1.5333333333em;
   padding-bottom: 0.7333333333em;
 }
+
 .main__record__table__result__watt {
   text-align: center;
   padding-top: 0.7333333333em;
   padding-bottom: 1.2em;
 }
+
 .main__record__table__result__watt span {
   font-size: 20px;
   padding-left: 1em;
   padding-right: 0.3em;
 }
+
 .main__record__table__result__watt::before {
   content: "消費量";
   font-size: 15px;
 }
+
 .main__record__table__result__watt::after {
   content: "W";
   font-size: 15px;
@@ -285,9 +330,11 @@ li {
   padding-top: 2em;
   padding-bottom: 6.0666666667em;
 }
+
 .main__rec-last__ttl::before {
   content: "前回の記録";
 }
+
 .main__rec__compar {
   width: 188px;
   height: 142px;
@@ -297,21 +344,26 @@ li {
   margin-bottom: 14.2em;
   border-radius: 19px;
 }
+
 .main__rec__compar__txt {
   padding-top: 1.3333333333em;
   padding-bottom: 0.6em;
 }
+
 .main__rec__compar__valu {
   font-size: 40px;
   padding-top: 0.2em;
   padding-bottom: 1.225em;
 }
+
 .main__rec__compar__valu::after {
   content: "W";
 }
+
 .main__rec-now__ttl::before {
   content: "前回の記録";
 }
+
 .main .rec {
   width: 327px;
   height: 65px;
@@ -319,10 +371,12 @@ li {
   padding: 0.75em 0;
   border-radius: 20px;
 }
+
 .main .rec__ttl .strong {
   font-size: 30px;
   padding-left: 2.8666666667em;
 }
+
 .main .rec__ttl::after {
   content: "W";
 }

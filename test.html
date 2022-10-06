@@ -10,16 +10,18 @@
 </head>
 
 <body>
-
     <div>
         <!--ファイル選択ボタン-->
         <input type="file" id="uploader" value="">
     </div>
 
     <div class="cropper-area">
-        <img id="cropper-img" src="" width="200" height="200" display="block">
+        <img id="importImage" src="" width="200" height="200" display="block">
+        <img id="cropperImage" src="" width="200" height="200" display="block">
+        <img id="resultImage" src="" width="200" height="200" display="block">
     </div>
-    <button id="crop-btn">切り抜き</button>
+    <button id="cropButton" onclick="crop()">切り抜き</button>
+    <button id="readButton" onclick="readbtnclick()">読み取り</button>
 
     <div><br>
         <!--結果を表示するテキストエリア-->

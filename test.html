@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>（仮）</title>
-    <link rel="stylesheet" href="./css/cropper.css">
 </head>
 
 <body>
@@ -15,20 +14,15 @@
         <input type="file" id="uploader" value="">
     </div>
 
-    <div class="cropper-area">
-        <img id="importImage" src="" width="200" height="200" display="block">
-        <img id="cropperImage" src="" width="200" height="200" display="block">
-        <img id="resultImage" src="" width="200" height="200" display="block">
-    </div>
-    <button id="cropButton" onclick="crop()">切り抜き</button>
-    <button id="readButton" onclick="readbtnclick()">読み取り</button>
-
+    <div>
+        <!--進捗状況の表示-->
+        進捗: <span id="progress">0</span>%
+     </div>
     <div><br>
         <!--結果を表示するテキストエリア-->
         <textarea id="ocrResult" style="height:100px;width:100px;"></textarea>
     </div>
     <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
-    <script src="./js/cropper.js"></script>
     <script src="./js/Tesseract.js"></script>
 </body>
 

@@ -1,3 +1,5 @@
+import Tesseract from '../tesseract/node_modules/tesseract.js';
+
 //recognize関数の宣言
 const recognize = function (evt) {
     //読み込むファイルの宣言

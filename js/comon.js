@@ -1,5 +1,3 @@
-const { data } = require("@tensorflow/tfjs-node");
-
 $(function () {
     // ローカルストレージ全削除
     // localStorage.clear();

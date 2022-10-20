@@ -15,12 +15,12 @@ $(function () {
     let data02;
     let c = 0;
 
-// ローカルストレージの保存数
+    // ローカルストレージの保存数
     const length = localStorage.length;
     console.log(length);
-/* ========================= test02.js ========================= */
+    /* ========================= test02.js ========================= */
     /* ===== inputから取得 ===== */
-    $(".btn01").off(`click`);
+
     $(".btn01").on('click', function (e) {
         // console.log("hello");
     
@@ -41,7 +41,7 @@ $(function () {
         if (window.localStorage) {// 使える時
             console.log("localStorageが使える");
 
-            date.unshift(days);
+            date.push(days);
             // console.log(date);
 
             // ローカルホスト保存　日にち
@@ -52,7 +52,7 @@ $(function () {
             data01 = JSON.parse(data01);
             console.log(data01);
 
-            Electricity.unshift(watt);
+            Electricity.push(watt);
             // console.log(Electricity);
 
             // ローカルホスト保存　消費電力
@@ -66,28 +66,82 @@ $(function () {
 
         } else { //使えない時
             console.log("ローカルストレージ使用できません");
-        } 
-
+        }
+ 
         /* ===== 記録書き出し ===== */
         /* 日付 */
-        $.each(date, function (index, val) {
+        $.each(data01, function (index, val) {
             index++;
             $(`.item${index}`).css('display', 'block');
             console.log(`.item${index}`);
-            $(".box-day").html(val);
+            $(`.box-day${index}`).html(val);
         });
         
         /* 消費量 */
-        $.each(Electricity, function (index, val) {
+        $.each(data02, function (index, val) {
             index++;
             $(`.item${index}`).css('display', 'block');
             console.log(`.item${index}`);
-            $(".box-val").html(val);
+            $(`.box-val${index}`).html(val);
             
         });
     })
 
 
+    $(window).on('load', function () {
+        console.log(data01);
+        console.log(data02);
+
+                /* ===== 計算式 ===== */
+                watt = 3600 * 1000 / (time * rev_kwh);
+                watt = Math.round(watt);
+                console.log(watt);
+        
+        if (window.localStorage) {// 使える時
+            date.push(days);
+            // console.log(date);
+
+            // ローカルホスト保存　日にち
+            json01 = JSON.stringify(date, undefined, 1);
+            localStorage.setItem('key01', json01);
+
+            data01 = localStorage.getItem('key01');
+            data01 = JSON.parse(data01);
+            console.log(data01);
+
+            Electricity.push(watt);
+            // console.log(Electricity);
+
+            // ローカルホスト保存　消費電力
+            json02 = JSON.stringify(Electricity, undefined, 1);
+            localStorage.setItem('key02', json02);
+
+            data02 = localStorage.getItem('key02');
+            data02 = JSON.parse(data02);
+            console.log(data02);
+
+
+        } else { //使えない時
+            
+        }
+        /* ===== 記録書き出し ===== */
+        /* 日付 */
+            $.each(data01, function (index, val) {
+                index++;
+                $(`.item${index}`).css('display', 'block');
+                console.log(`.item${index}`);
+                $(`.box-day${index}`).html(val);
+            });
+        
+        /* 消費量 */
+        $.each(data02, function (index, val) {
+            index++;
+            $(`.item${index}`).css('display', 'block');
+            console.log(`.item${index}`);
+            $(`.box-val${index}`).html(val);
+            
+        });
+    });
 
 /* ===== 日付の取得 ===== */
     // 日付の取得

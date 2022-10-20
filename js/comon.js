@@ -68,28 +68,23 @@ $(function () {
             console.log("ローカルストレージ使用できません");
         } 
 
-        // カウント
-        ++c;
-        console.log(c);
-
-        /* ===== 記録の表示　(途中)  ===== */
-        $("#result").append(`<ul class="result__ul ${c}" id="ul"></ul>`)
-
-        $(`#ul.result__ul`).append(`<li class="result__txt ${c}" id="days"></li>`);
-
-        $(`#days.result__txt `).append(`${data01[0]}`);
-
-        console.log($(`#days`).eq());
-
-        $(`#ul.result__ul`).append(`<li class="result__txt ${c}" id="time"></li>`);
-
-        $(`#time.result__txt`).append(`${data02[0]}`);
-
-        for (let i = 0; i < date.length; i++){
-            scosno
-        }
-
-
+        /* ===== 記録書き出し ===== */
+        /* 日付 */
+        $.each(date, function (index, val) {
+            index++;
+            $(`.item${index}`).css('display', 'block');
+            console.log(`.item${index}`);
+            $(".box-day").html(val);
+        });
+        
+        /* 消費量 */
+        $.each(Electricity, function (index, val) {
+            index++;
+            $(`.item${index}`).css('display', 'block');
+            console.log(`.item${index}`);
+            $(".box-val").html(val);
+            
+        });
     })
 
 
@@ -200,10 +195,6 @@ $(function () {
         // $(".main__record__table__result__watt").empty();
         $("li.main__record__table__result").append(`<p class="main__record__table__result__watt"><span class="h4">${Electricity[i]}</span></p>`);
     })
-
-
-
-    
 })
 
 

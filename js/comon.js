@@ -14,8 +14,7 @@ $(function () {
     let json02;
     let data01;
     let data02;
- 
-    let c = 0;
+
 
     // ローカルストレージの保存数
     const length = localStorage.length;
@@ -23,7 +22,7 @@ $(function () {
     /* ========================= test02.js ========================= */
     /* ===== inputから取得 ===== */
 
-    $(".btn01").on('click', function (e) {
+    $(".btn01").on('click', function () {
         // console.log("hello");
     
         // 計測定数
@@ -75,6 +74,72 @@ $(function () {
         /* ===== 記録書き出し ===== */
         /* 日付 */
         $.each(data01, function (index, val) {
+            index++;
+            $(`.item${index}`).css('display', 'block');
+            console.log(`.item${index}`);
+            $(`.box-day${index}`).html(val);
+            index++;
+        });
+        
+        /* 消費量 */
+        $.each(data02, function (index, val) {
+            index++;
+            $(`.item${index}`).css('display', 'block');
+            console.log(`.item${index}`);
+            $(`.box-val${index}`).html(val);
+            
+        });
+        console.log(data01);
+        console.log(data02);
+    })
+        /* ===== クリックイベント終了 ===== */
+
+    
+    
+    // 読み込んだら処理
+    $(window).on('load', function () {
+        
+        var keynameVal = window.localStorage.getItem('key02');
+        console.log(keynameVal);
+
+        console.log(data01);
+        console.log(data02);
+
+        /* ===== ローカルストレージに記録 ===== */
+
+        if (window.localStorage) {// 使える時
+        console.log("localStorageが使える");
+
+        date.push(days);
+        // console.log(date);
+
+        // ローカルホスト保存　日にち
+        json01 = JSON.stringify(date, undefined, 1);
+        localStorage.setItem('key01', json01);
+
+        data01 = localStorage.getItem('key01');
+        data01 = JSON.parse(data01);
+        console.log(data01);
+
+        Electricity.push(watt);
+        // console.log(Electricity);
+
+        // ローカルホスト保存　消費電力
+        json02 = JSON.stringify(Electricity, undefined, 1);
+        localStorage.setItem('key02', json02);
+
+        data02 = localStorage.getItem('key02');
+        data02 = JSON.parse(data02);
+        console.log(data02);
+
+
+    } else { //使えない時
+        console.log("ローカルストレージ使用できません");
+    }
+        
+        /* ===== 記録書き出し ===== */
+        /* 日付 */
+        $.each(data01, function (index, val) {
             $(`.item${index}`).css('display', 'block');
             console.log(`.item${index}`);
             $(`.box-day${index}`).html(val);
@@ -88,37 +153,7 @@ $(function () {
             $(`.box-val${index}`).html(val);
             index++;
         });
-        console.log(data01);
-        console.log(data02);
-    })
-        /* ===== クリックイベント終了 ===== */
 
-    
-    
-    // 読み込んだら処理
-    $(window).on('load', function () {
-        
-        var keynameVal = window.localStorage.getItem('key01');
-        console.log(keynameVal)
-        console.log(data01);
-        console.log(data02);
-
-        /* ===== 記録書き出し ===== */
-        /* 日付 */
-            $.each(data01, function (index, val) {
-                $(`.item${index++}`).css('display', 'block');
-                console.log(`.item${index++}`);
-                $(`.box-day${index++}`).html(val);
-            });
-        
-        /* 消費量 */
-        $.each(data02, function (index, val) {
-            index++;
-            $(`.item${index}`).css('display', 'block');
-            console.log(`.item${index}`);
-            $(`.box-val${index}`).html(val);
-            
-        });
     });
 
 

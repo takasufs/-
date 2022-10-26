@@ -1,4 +1,4 @@
-import Tesseract from '../tesseract/node_modules/tesseract.js';
+var Tesseract = require('tesseract.js')
 
 //recognize関数の宣言
 const recognize = function (evt) {
@@ -10,9 +10,7 @@ const recognize = function (evt) {
         return;
     }
     //Tesseract.jsの実行
-    Tesseract
-        //OCR機能を実行する際の読み込むファイルや言語を設定（言語はlang: ''の中身をengやjpnに変更することで英語や日本語にすることが可能です）
-        .recognize(files[0], { lang: 'eng', tessedit_pageseg_mode: "RAW_LINE" })
+    _recognize(files[0], { lang: 'eng', tessedit_pageseg_mode: "RAW_LINE" })
         .progress(function (p) {
             // 進歩状況の表示
             //進捗状況を表示するspanタグを指定

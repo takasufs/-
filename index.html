@@ -68,7 +68,7 @@
                             ctx.fillStyle = "#000";
                             // 画像読み込み
                             const chara02 = new Image();
-                            chara02.src = "/images/lp/lp_light_upper.png";  // 画像のURLを指定
+                            chara02.src = "/images/lp/lp_light_upper2.png";  // 画像のURLを指定
                             chara02.onload = () =>
                             {
                                 ctx.drawImage(chara02, 0, 0);
@@ -79,14 +79,38 @@
                             {
                                 ctx.drawImage(chara, 16, 138);
                             };
+
+                            let y = 100;
+                            // const board = document.querySelector("#board");
+                            const canvas = board.getContext("2d");
+                            canvas.beginPath();
+                            canvas.strokeStyle = '#FFF100';
+                            canvas.fillStyle = '#FFF100';
+                            canvas.moveTo(0, 138);
+                            canvas.lineTo(0, 138 - y);
+                            canvas.lineTo(150, 138 - y);
+                            canvas.lineTo(150, 138);
+                            canvas.fill();
                         };
+
+                        const update = () =>
+                        {
+
+                            requestAnimationFrame(update);
+                        };
+                        const Yresetbtn = document.querySelector("#Yreset");
+                        Yresetbtn.addEventListener("click", function ()
+                        {
+                            y = 1;
+                            console.log("yes");
+                        });
                     </script>
                     <p class="main__ans__value__txt">設定してください</p>
                 </div>
             </div>
             <!-- reset-->
             <div class="main__rst">
-                <button class="main__rst__btn">リセット</button>
+                <button class="main__rst__btn" id="Yreset">リセット</button>
             </div>
         </div>
     </main>

@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eneka</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="https://bell-cocoro.org/Eneka/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 
 <body>
     <header class="header">
@@ -59,8 +60,7 @@
                     <canvas id="board" width="150" height="224" class="main__ans__value__canvas"></canvas>
                     <!-- canvas内容 -->
                     <script>
-                        window.onload = () =>
-                        {
+                        window.onload = () => {
                             // canvas準備
                             const board = document.querySelector("#board");
                             const ctx = board.getContext("2d");
@@ -69,14 +69,12 @@
                             // 画像読み込み
                             const chara02 = new Image();
                             chara02.src = "/images/lp/lp_light_upper2.png";  // 画像のURLを指定
-                            chara02.onload = () =>
-                            {
+                            chara02.onload = () => {
                                 ctx.drawImage(chara02, 0, 0);
                             };
                             const chara = new Image();
                             chara.src = "/images/lp/lp_light_bottom.png";  // 画像のURLを指定
-                            chara.onload = () =>
-                            {
+                            chara.onload = () => {
                                 ctx.drawImage(chara, 16, 138);
                             };
 
@@ -93,6 +91,7 @@
                             canvas.fill();
                         };
 
+<<<<<<< HEAD
 
                         function Yresetbtn()
                         {
@@ -105,6 +104,17 @@
                                 Yreset.value = "リセット";
                             }
                         };
+=======
+                        const update = () => {
+
+                            requestAnimationFrame(update);
+                        };
+                        const Yresetbtn = document.querySelector("#Yreset");
+                        Yresetbtn.addEventListener("click", function () {
+                            y = 1;
+                            console.log("yes");
+                        });
+>>>>>>> 8132fb5f02b19b5b2318a80de914c4ffb330c7f5
                     </script>
                     <p class="main__ans__value__txt">設定してください</p>
                 </div>

@@ -93,24 +93,25 @@
                             canvas.fill();
                         };
 
-                        const update = () =>
-                        {
 
-                            requestAnimationFrame(update);
-                        };
-                        const Yresetbtn = document.querySelector("#Yreset");
-                        Yresetbtn.addEventListener("click", function ()
+                        function Yresetbtn()
                         {
-                            y = 1;
-                            console.log("yes");
-                        });
+                            let Yreset = document.querySelector("#Yreset");
+
+
+                            if (Yreset.value == "リセット") {
+                                Yreset.value = "計算";
+                            } else {
+                                Yreset.value = "リセット";
+                            }
+                        };
                     </script>
                     <p class="main__ans__value__txt">設定してください</p>
                 </div>
             </div>
             <!-- reset-->
             <div class="main__rst">
-                <button class="main__rst__btn" id="Yreset">リセット</button>
+                <input type="button" value="計算" class="main__rst__btn" id="Yreset" onclick="Yresetbtn()"></input>
             </div>
         </div>
     </main>

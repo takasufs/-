@@ -1,63 +1,120 @@
-.main{
-    &__inner{
-        
-    }
-    &__rec{
+.main {
+    &__inner {}
+
+    &__rec {
+        z-index: 20;
         padding-top: (30em/15);
         padding-bottom: (91em/15);
-        &-last{
+        position: relative;
 
-            &__ttl{
+        &-last {
+
+            &__ttl {
+                text-align: center;
+                padding: 0 (20em/16);
             }
-            &__ttl::before{
+
+            &__ttl::before {
                 content: "前回の記録";
             }
         }
 
-        &__compar{
+        &__compar {
             width: 188px;
             height: 142px;
+            position: relative;
+            z-index: 20;
             background-color: #FEFFE8;
             text-align: center;
             margin-top: (40em/15);
             margin-bottom: (213em/15);
             border-radius: 19px;
-            &__txt{
+
+            &__txt {
                 padding-top: (20em/15);
                 padding-bottom: (9em/15);
             }
-            &__valu{
+
+            &__valu {
                 font-size: 40px;
                 padding-top: (8em/40);
                 padding-bottom: (49em/40);
             }
-            &__valu::after{
-                content: "W";
+
+            &__valu::after {
+                content: "KW";
             }
         }
-        &-now{
-            &__ttl{
 
-            }
-            &__ttl::before{
+        &-now {
+            z-index: 20;
+
+            &__ttl {}
+
+            &__ttl::before {
                 content: "前回の記録";
             }
         }
+
+        &__up {
+            display: none;
+
+        }
+
+        &__up.UP {
+            display: block;
+            width: 180px;
+            height: 398px;
+            background-image: url('/images/ranking/arrow_big_up.png');
+            position: absolute;
+            float: right;
+            z-index: 10;
+            right: 0;
+            bottom: -95px;
+            margin-right: (-25em/16);
+        }
+
+        &__down {
+            display: none;
+        }
+
+        &__down.DOWN {
+            display: block;
+            width: 375px;
+            height: 747px;
+            position: absolute;
+            background-image: url('/images/ranking/arrow_big_down.png');
+            z-index: 10;
+            right: 0;
+            top: 0;
+            margin-right: (-25em/16);
+        }
+
+
     }
-    .rec{
+
+
+    .rec {
+        position: relative;
         width: 327px;
         height: 65px;
         background-color: #fff;
         padding: (15em/20) 0;
         border-radius: 20px;
-        &__ttl{
-            .strong{
+        z-index: 20;
+
+        &__ttl {
+            text-align: center;
+            padding: 0 (20em/16);
+
+            .strong {
                 font-size: 30px;
                 padding-left: (86em/30);
             }
         }
-        &__ttl::after{
-            content: "W";
+
+        &__ttl::after {
+            content: "KW";
         }
     }
 

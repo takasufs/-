@@ -24,7 +24,7 @@ $(function () {
 
     $(".btn01").on('click', function () {
         // console.log("hello");
-    
+
         // 計測定数
         rev_kwh = $("#rev_kwh").val();
         console.log(rev_kwh);
@@ -70,7 +70,7 @@ $(function () {
         } else { //使えない時
             console.log("ローカルストレージ使用できません");
         }
- 
+
         /* ===== 記録書き出し ===== */
         /* 日付 */
         $.each(data01, function (index, val) {
@@ -80,25 +80,25 @@ $(function () {
             $(`.box-day${index}`).html(val);
             index++;
         });
-        
+
         /* 消費量 */
         $.each(data02, function (index, val) {
             index++;
             $(`.item${index}`).css('display', 'block');
             console.log(`.item${index}`);
             $(`.box-val${index}`).html(val);
-            
+
         });
         console.log(data01);
         console.log(data02);
     })
-        /* ===== クリックイベント終了 ===== */
+    /* ===== クリックイベント終了 ===== */
 
-    
-    
+
+
     // 読み込んだら処理
     $(window).on('load', function () {
-        
+
         var keynameVal = window.localStorage.getItem('key02');
         console.log(keynameVal);
 
@@ -108,35 +108,35 @@ $(function () {
         /* ===== ローカルストレージに記録 ===== */
 
         if (window.localStorage) {// 使える時
-        console.log("localStorageが使える");
+            console.log("localStorageが使える");
 
-        date.push(days);
-        // console.log(date);
+            date.push(days);
+            // console.log(date);
 
-        // ローカルホスト保存　日にち
-        json01 = JSON.stringify(date, undefined, 1);
-        localStorage.setItem('key01', json01);
+            // ローカルホスト保存　日にち
+            json01 = JSON.stringify(date, undefined, 1);
+            localStorage.setItem('key01', json01);
 
-        data01 = localStorage.getItem('key01');
-        data01 = JSON.parse(data01);
-        console.log(data01);
+            data01 = localStorage.getItem('key01');
+            data01 = JSON.parse(data01);
+            console.log(data01);
 
-        Electricity.push(watt);
-        // console.log(Electricity);
+            Electricity.push(watt);
+            // console.log(Electricity);
 
-        // ローカルホスト保存　消費電力
-        json02 = JSON.stringify(Electricity, undefined, 1);
-        localStorage.setItem('key02', json02);
+            // ローカルホスト保存　消費電力
+            json02 = JSON.stringify(Electricity, undefined, 1);
+            localStorage.setItem('key02', json02);
 
-        data02 = localStorage.getItem('key02');
-        data02 = JSON.parse(data02);
-        console.log(data02);
+            data02 = localStorage.getItem('key02');
+            data02 = JSON.parse(data02);
+            console.log(data02);
 
 
-    } else { //使えない時
-        console.log("ローカルストレージ使用できません");
-    }
-        
+        } else { //使えない時
+            console.log("ローカルストレージ使用できません");
+        }
+
         /* ===== 記録書き出し ===== */
         /* 日付 */
         $.each(data01, function (index, val) {
@@ -145,7 +145,7 @@ $(function () {
             $(`.box-day${index}`).html(val);
             index++;
         });
-        
+
         /* 消費量 */
         $.each(data02, function (index, val) {
             $(`.item${index}`).css('display', 'block');
@@ -177,7 +177,7 @@ $(function () {
 
 
 
-/* ===== 日付の取得 ===== */
+    /* ===== 日付の取得 ===== */
     // 日付の取得
     let today = new Date();
     // console.log(today);
@@ -200,28 +200,28 @@ $(function () {
     // console.log(days);
 
 
-/* ===== 消費電力の計算 ===== */
+    /* ===== 消費電力の計算 ===== */
     // time = 960
     // rev_kwh = 60
 
     // console.log(3600 * 1000);
     // console.log(time * rev_kwh)
-    
+
     // watt = 3600 * 1000 / (time * rev_kwh);
     // console.log(watt);
 
 
-    
 
 
-/* ========================= index.js ========================= */
+
+    /* ========================= index.js ========================= */
 
     // ローカdateレージ
     //保存
     // let date = new Object();
-    
+
     // localStorage.setItem('days', day);
-    
+
     // console.log(date.date)
     // //保存
     // let Electricity = new Object();
@@ -261,9 +261,26 @@ $(function () {
     // console.log(length);
 
 
-/* ========================= recode.js ========================= */
+    /* ========================= recode.js ========================= */
 
-})
+    let a = 200;
+    let b = 100;
+
+    $(".btn").on('click', function () {
+        console.log("hello");
+
+        if (a < b) {
+            $(".main__rec__up").addClass("UP");
+            console.log("前回と比べて増えた");
+        } else if (a > b) {
+            $(".main__rec__down").addClass("DOWN");
+            console.log("前回と比べて減った");
+        } else {
+            console.log("同じ値");
+        }
+    });
+
+});
 
 
 

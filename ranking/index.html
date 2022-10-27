@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eneka</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="https://bell-cocoro.org/Eneka/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <header class="header">
         <div class="header__inner">
             <nav class="header__nav">
                 <ul class="header__nav__gnav">
-                    <li class="header__nav__gnav__item"><a href="https://bell-cocoro.org/Eneka/index.html" class="header__nav__gnav__item__link"><img
-                                src="../images/comon/app_icon_demo.png" alt="" class="header__nav__gnav__item__icon"></a>
+                    <li class="header__nav__gnav__item"><a href="https://bell-cocoro.org/Eneka/index.html"
+                            class="header__nav__gnav__item__link"><img src="../images/comon/app_icon_demo.png" alt=""
+                                class="header__nav__gnav__item__icon"></a>
                     </li>
                     <li class="header__nav__gnav__item"><a href="#" class="header__nav__gnav__item__link"><img
                                 src="../images/comon/header_bell_icon.png" alt=""
@@ -29,18 +32,24 @@
             <div class="main__rec">
                 <!-- 前回の記録 -->
                 <div class="main__rec-last rec h4">
-                    <h4 class="main__rec-last__ttl rec__ttl"><span class="strong">400</span></h4>
+                    <h4 class="main__rec-last__ttl rec__ttl"><span class="strong"></span></h4>
                 </div>
                 <!-- 前回と今回の差 -->
                 <div class="main__rec__compar">
                     <p class="main__rec__compar__txt">前回との差</p>
                     <h2 class="main__rec__compar__valu">0</h2>
                 </div>
+
+                <!-- UP -->
+                <div class="main__rec__up"></div>
+                <!-- DOWN -->
+                <div class="main__rec__down"></div>
+
                 <!-- 今回の記録 -->
                 <div class="main__rec-now rec  h4">
-                    <h4 class="main__rec-now__ttl rec__ttl"><span class="strong">400</span></h4>
+                    <h4 class="main__rec-now__ttl rec__ttl"><span class="strong"></span></h4>
                 </div>
-                <!-- <img src= "/images/ranking/arrow_big_up.png" alt="" class="main__rec__arrow-bck"> -->
+                <div class="btn-1">クリック</div>
             </div>
         </div>
     </main>
@@ -50,7 +59,8 @@
                 <ul class="footer__nav__gnav">
                     <!-- HOME -->
                     <li class="footer__nav__gnav__item gnav01">
-                        <a href="https://bell-cocoro.org/Eneka/index.html" class="footer__nav__gnav__item__link gnav01__link">
+                        <a href="https://bell-cocoro.org/Eneka/index.html"
+                            class="footer__nav__gnav__item__link gnav01__link">
                             <img src="../images/comon/footer_nav_icon_HOME.png" alt=""
                                 class="footer__nav__gnav__item__img gnav01__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav01__txt small">HOME</p>
@@ -58,7 +68,8 @@
                     </li>
                     <!-- LIST -->
                     <li class="footer__nav__gnav__item gnav02">
-                        <a href="https://bell-cocoro.org/Eneka/record/index.html" class="footer__nav__gnav__item__link gnav02__link">
+                        <a href="https://bell-cocoro.org/Eneka/record/index.html"
+                            class="footer__nav__gnav__item__link gnav02__link">
                             <img src="../images/comon/footer_nav_icon_List.png" alt=""
                                 class="footer__nav__gnav__item__img gnav02__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav02__txt small">List</p>
@@ -66,7 +77,8 @@
                     </li>
                     <!-- RANKING -->
                     <li class="footer__nav__gnav__item gnav03">
-                        <a href="https://bell-cocoro.org/Eneka/ranking/index.html" class="footer__nav__gnav__item__link gnav03__link">
+                        <a href="https://bell-cocoro.org/Eneka/ranking/index.html"
+                            class="footer__nav__gnav__item__link gnav03__link">
                             <img src="../images/comon/footer_nav_icon_Ranking.png" alt=""
                                 class="footer__nav__gnav__item__img gnav03__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav03__txt small">Ranking</p>
@@ -76,5 +88,8 @@
             </nav>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="/js/comon.js"></script>
 </body>
+
 </html>

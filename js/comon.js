@@ -266,7 +266,7 @@ $(function () {
     let a = 200;
     let b = 100;
 
-    $(".btn").on('click', function () {
+    $(".btn-1").on('click', function () {
         console.log("hello");
 
         if (a < b) {

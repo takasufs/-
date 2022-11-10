@@ -9,7 +9,7 @@ const recognize = function (evt) {
     }
     //Tesseract.jsの実行
     Tesseract
-        .recognize(files[0], { lang: 'eng', tessedit_pageseg_mode: "RAW_LINE" })
+        .recognize(files[0], { lang: 'eng', tessedit_pageseg_mode: "PSM_SINGLE_LINE", tessedit_char_whitelist: '0123456789', VAR_CHAR_BLACKLIST: "!?@#$%&*()<>_-+=/:;'\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" })
         .progress(function (p) {
             // 進歩状況の表示
             //進捗状況を表示するspanタグを指定

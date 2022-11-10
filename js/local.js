@@ -12,41 +12,34 @@ $(function () {
     let data01;
     let data02;
 
-
-
-
-
     /* ===== 日付の取得 ===== */
-    function data() {
-        // 日付の取得
-        let today = new Date();
-        // console.log(today);
+    // 日付の取得
+    let today = new Date();
+    // console.log(today);
 
-        // 年の取得
-        var Year = today.getFullYear().toString();
-        // console.log(Year); 
+    // 年の取得
+    var Year = today.getFullYear().toString();
+    // console.log(Year); 
 
-        // 月の取得
-        let month = today.getMonth();
-        month = month + 1;
-        month = month.toString();
-        // console.log(month);
+    // 月の取得
+    let month = today.getMonth();
+    month = month + 1;
+    month = month.toString();
+    // console.log(month);
 
-        // 日の取得
-        var day = today.getDate().toString();
-        // console.log(day);
+    // 日の取得
+    var day = today.getDate().toString();
+    // console.log(day);
 
-        days = (Year + "/" + month + "/" + day);
-        // console.log(days);
-    }
+    days = (Year + "/" + month + "/" + day);
+    // console.log(days);
 
-    //日付の取得
-    data();
 
 
     /* ===== 計算 ===== */
     // 消費電力量(結果)
     consumption = 0;
+
     function calculation(constant, time) {
         constant = $("#constant").val()
         // タイム
@@ -61,16 +54,21 @@ $(function () {
     }
 
 
-    /* ===== 計算 ===== */
+    /* ===== 計算が押されたら ===== */
     $(".btn01").on('click', function () {
         console.log("hello");
-
-
-
         // 計算の関数を呼び出す
         calculation(constant, time);
     })
 
+    $(function () {
+        let constant = $("#constant");
+        let time = $("#time");
+        let btn = $(".btn01");
+        var timer = window.setInterval(function () {
+            btn.prop("disabled", !constant.val());
+        }, 500);
+    });
 
     /* ===== ローカルストレージに記録 ===== */
 

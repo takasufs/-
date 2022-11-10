@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eneka</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 
@@ -69,13 +69,13 @@
                             ctx.fillStyle = "#000";
                             // 画像読み込み
                             const chara02 = new Image();
-                            chara02.src = "/images/lp/lp_light_upper2.png";  // 画像のURLを指定
+                            chara02.src = "./images/lp/lp_light_upper2.png";  // 画像のURLを指定
                             chara02.onload = () =>
                             {
                                 ctx.drawImage(chara02, 0, 0);
                             };
                             const chara = new Image();
-                            chara.src = "/images/lp/lp_light_bottom.png";  // 画像のURLを指定
+                            chara.src = "./images/lp/lp_light_bottom.png";  // 画像のURLを指定
                             chara.onload = () =>
                             {
                                 ctx.drawImage(chara, 16, 138);

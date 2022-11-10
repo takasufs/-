@@ -1,144 +1,42 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ローカルストレージ</title>
     <style>
-        .result{
-            margin-top: 100px;
-        }
-        .box{
+        .box {
             border: 1px solid #000;
             width: 45%;
             background-color: #f5f5f5;
             border-radius: 10px;
             margin: 20px 0;
         }
-        .box-ul{
-
-        }
-        .box-day{
-        }
-        .box-val{
-
-        }
-        .item1{
-            display: none;
-        }
-        .item2{
-            display: none;
-        }
-        .item3{
-            display: none;
-        }
-        .item4{
-            display: none;
-        }
-        .item5{
-            display: none;
-        }
-        .item6{
-            display: none;
-        }
-        .item7{
-            display: none;
-        }
-        .item8{
-            display: none;
-        }
-        .item9{
-            display: none;
-        }
-        .item10{
-            display: none;
-        }
     </style>
 </head>
+
 <body>
     <div class="">
         <p>計測定数</p>
-        <input type="number" name="rev" value="" id="rev_kwh" required>
+        <input type="number" name="rev" value="" id="constant" required>
         <p>タイム</p>
         <input type="number" name="time" value="" id="time" required>
-        <button type="submit" class="btn01">送信</button>
+        <div class="btn01">計算</div>
     </div>
 
-    <div  id="result" class="result">
-
-        <div class="box item1">
-            <ul class="box-ul">
-                <li class="box-day1"></li>
-                <li class="box-val1"></li>
-            </ul>
-        </div>
-        
-        <div class="box item2">
-            <ul class="box-ul">
-                <li class="box-day2"></li>
-                <li class="box-val2"></li>
-            </ul>
-        </div>
-
-        <div class="box item3">
-            <ul class="box-ul">
-                <li class="box-day3"></li>
-                <li class="box-val3"></li>
-            </ul>
-        </div>
-
-        <div class="box item4">
-            <ul class="box-ul">
-                <li class="box-day"></li>
-                <li class="box-val"></li>
-            </ul>
-        </div>
-
-        <div class="box item5">
-            <ul class="box-ul">
-                <li class="box-day"></li>
-                <li class="box-val"></li>
-            </ul>
-        </div>
-
-        <div class="box item6">
-            <ul class="box-ul">
-                <li class="box-day"></li>
-                <li class="box-val"></li>
-            </ul>
-        </div>
-        
-        <div class="box item7">
-            <ul class="box-ul">
-                <li class="box-day"></li>
-                <li class="box-val"></li>
-            </ul>
-        </div>
-
-        <div class="box item8">
-            <ul class="box-ul">
-                <li class="box-day"></li>
-                <li class="box-val"></li>
-            </ul>
-        </div>
-
-        <div class="box item9">
-            <ul class="box-ul">
-                <li class="box-day"></li>
-                <li class="box-val"></li>
-            </ul>
-        </div>
-
-        <div class="box item10">
-            <ul class="box-ul">
-                <li class="box-day"></li>
-                <li class="box-val"></li>
-            </ul>
-        </div>
+    <div class="btn02">表示</div>
+    <div class="btn03">削除</div>
+    <div id="box" class="box">
+        <!-- <div class="box__list">
+            <p id="day" class="day">日付：</p>
+            <h4 id="value" class="value">消費電力：</h4>
+        </div> -->
     </div>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <!-- <script src="./js/comon.js"></script> -->
-    <script src="./js/local.js"></script>
+    <script src="/js/local.js"></script>
 </body>
+
 </html>

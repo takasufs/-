@@ -1,5 +1,3 @@
-var Tesseract = require('tesseract.js')
-
 //recognize関数の宣言
 const recognize = function (evt) {
     //読み込むファイルの宣言
@@ -10,7 +8,8 @@ const recognize = function (evt) {
         return;
     }
     //Tesseract.jsの実行
-    _recognize(files[0], { lang: 'eng', tessedit_pageseg_mode: "RAW_LINE" })
+    Tesseract
+        .recognize(files[0], { lang: 'eng', tessedit_pageseg_mode: "RAW_LINE" })
         .progress(function (p) {
             // 進歩状況の表示
             //進捗状況を表示するspanタグを指定

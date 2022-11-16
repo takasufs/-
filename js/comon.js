@@ -2,13 +2,13 @@ $(function () {
 
 
     let watt;
-    let Kwh;
+    let Kwh = 0;
     let time = 0;
     let rev_kwh = 0;
     let days;
 
     // let date = [];
-    let Electricity = [];
+    // let Electricity = [];
     let json01;
     let json02;
     let data01 = [];
@@ -36,14 +36,23 @@ $(function () {
     days = (Year + "/" + month + "/" + day);
     // console.log(days);
 
-    // ローカルストレージの保存数
-    // const length = localStorage.length;
-    // console.log(length);
     /* ========================= test02.js ========================= */
-
     let date = [];
+    let Electricity = [];
 
-    let a = [];
+    // /* ===== 記録書き出し・表示 ===== */
+    // // 読み込んだ時に過去の記録を表示
+    // $(window).on('load', function () {
+    //     // Electricityのローカルストレージを配列に入れる
+    //     data01 = localStorage.getItem('day');
+    //     data01 = JSON.parse(data01);
+    //     console.log(data01);
+
+    //     // Electricityのローカルストレージを配列に入れる
+    //     data02 = localStorage.getItem('value');
+    //     data02 = JSON.parse(data02);
+    //     console.log(data02);
+    // });
 
 
     $.when(
@@ -51,7 +60,7 @@ $(function () {
             // console.log("hello");
 
             // 計測定数
-            rev_kwh = $("#rev_kwh").val();
+            rev_kwh = $("#constant").val();
             console.log(rev_kwh);
 
             // タイム
@@ -60,6 +69,7 @@ $(function () {
 
             /* ===== 計算式 ===== */
             watt = 3600 * 1000 / (time * rev_kwh);
+            console.log(watt)
             Kwh = watt / 1000;
             Kwh = watt * 24;
             console.log(Kwh);
@@ -69,28 +79,33 @@ $(function () {
             if (window.localStorage) {// 使える時
                 console.log("localStorageが使える");
 
+                // ローカルホスト保存　日にち(date)
+                // 配列に日付を入れる
                 date.push(days);
                 // console.log(date);
 
-                // ローカルホスト保存　日にち
+                // jsonにデータ形式を変える
                 json01 = JSON.stringify(date, undefined, 1);
+                console.log(json01)
                 localStorage.setItem('day', json01);
 
                 data01 = localStorage.getItem('day');
                 data01 = JSON.parse(data01);
                 console.log(data01);
 
-                Electricity.push(watt);
+
+                // ローカルホスト保存　消費電力(Electricity)
+                // 配列に計算結果を入れる
+                Electricity.push(Kwh);
                 // console.log(Electricity);
 
-                // ローカルホスト保存　消費電力
+                // jsonにデータ形式を変える
                 json02 = JSON.stringify(Electricity, undefined, 1);
                 localStorage.setItem('value', json02);
 
                 data02 = localStorage.getItem('value');
                 data02 = JSON.parse(data02);
                 console.log(data02);
-
 
             } else { //使えない時
                 console.log("ローカルストレージ使用できません");
@@ -101,11 +116,12 @@ $(function () {
 
     });
 
-    console.log(data01);
-    console.log(data02);
-    /* ===== 記録書き出し ===== */
+
+
     $(".btn02").on("click", function () {
         $(".box").empty();
+        console.log(data01);
+        console.log(data02);
         for (let i = 0; i < data01.length; i++) {
             $(".box").append(`<div class="box__list${i}"></div>`);
             $(`.box__list${i}`).append(`<p id="day" class="day${i}">日付：${data01[i]}</p>`);
@@ -113,9 +129,23 @@ $(function () {
         }
     })
 
+    /* ===== データ削除 ===== */
     $(".btn03").on("click", function () {
-        // ローカルストレージ全削除
-        localStorage.clear();
+
+        // 確認ダイアログ
+        if (confirm('削除してもよろしいですか？（＊この操作は取り消せません）')) {
+            // 「OK」をクリックした際の処理を記述
+            $(".box").empty();
+            // ローカルストレージ全削除
+            localStorage.clear();
+        } else {
+            //キャンセルした場合
+            //何も起きない
+            return false
+        }
+
+
+
     })
     // ローカルストレージの保存数
     const length = localStorage.length;

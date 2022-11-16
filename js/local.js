@@ -1,18 +1,20 @@
 $(function () {
-
-    let watt;
-    let Kwh;
-
     let days;
+    let val = 0;
 
-    let date = [];
-    let Electricity = [];
-    let json01;
-    let json02;
-    let data01;
-    let data02;
+    // 日付の配列
+    let A = [];
+    // 消費電力量の配列
+    let B = [];
 
-    /* ===== 日付の取得 ===== */
+    // 日付のjson
+    let jsonA;
+    // 消費電力のjson
+    let jsonB;
+
+
+
+    // /* ===== 日付の取得 ===== */
     // 日付の取得
     let today = new Date();
     // console.log(today);
@@ -36,51 +38,67 @@ $(function () {
 
 
 
-    /* ===== 計算 ===== */
-    // 消費電力量(結果)
-    consumption = 0;
-
-    function calculation(constant, time) {
-        constant = $("#constant").val()
-        // タイム
-        time = $("#time").val();
-
-        /* ===== 計算式 ===== */
-        consumption = 3600 * 1000 / (time * constant);
-        console.log(consumption)
-        Kwh = consumption / 1000;
-        Kwh = consumption * 24;
-        console.log(Kwh);
-    }
-
-
-    /* ===== 計算が押されたら ===== */
     $(".btn01").on('click', function () {
-        console.log("hello");
-        // 計算の関数を呼び出す
-        calculation(constant, time);
+        // console.log("hello");
+        val = $("#constant").val();
+        // console.log(val);
+        A.push(days);
+        B.push(val);
+
+        console.log(A);
+        console.log(B);
     })
 
-    $(function () {
-        let constant = $("#constant");
-        let time = $("#time");
-        let btn = $(".btn01");
-        var timer = window.setInterval(function () {
-            btn.prop("disabled", !constant.val());
-        }, 500);
-    });
+    $(".btn02").on('click', function () {
+        // console.log("hello");
+        A.forEach(function (value) {
+            console.log(value);
+        });
+        /* ===== ローカルストレージに記録 ===== */
 
-    /* ===== ローカルストレージに記録 ===== */
+        // if (window.localStorage) {// 使える時
+        //     console.log("localStorageが使える");
 
-    if (window.localStorage) {// 使える時
-        console.log("localStorageが使える");
-    } else { //使えない時
-        console.log("ローカルストレージ使用できません");
-    }
+        //     var array = [];
+        //     var obj = {
+        //         'A': days,
+        //         'B': val
+        //     };
+        //     array.push(A, B);
+        //     console.log(array)
+        //     var setjson = JSON.stringify(obj);
+        //     localStorage.setItem('dete', setjson);
+
+        // } else { //使えない時
+        //     console.log("ローカルストレージ使用できません");
+        // }
+    })
+
+
+    var array2 = [
+        '東京', '神奈川', '千葉', '埼玉',
+        // ['茨城', '栃木', '群馬']
+    ];
+    console.log(array2);
+    // array2.forEach(function (value) {
+    //     console.log(value);
+    // });
+
+    let ABC = {};
+    $.each(array2, function (index, value) {
+        console.log(value)
+        // console.log(array2[1].value)
+    })
+
+
+
+
+
+
+
+
+
+    // // 初期化
+    // localStorage.clear()
+
 });
-
-
-
-
-
-

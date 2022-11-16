@@ -76,19 +76,42 @@ $(function () {
 
 
     var array2 = [
-        '東京', '神奈川', '千葉', '埼玉',
-        // ['茨城', '栃木', '群馬']
+        ['東京', '神奈川', '千葉', '埼玉'],
+        ['茨城', '栃木', '群馬', '愛知']
     ];
     console.log(array2);
-    // array2.forEach(function (value) {
-    //     console.log(value);
-    // });
 
     let ABC = {};
-    $.each(array2, function (index, value) {
-        console.log(value)
-        // console.log(array2[1].value)
-    })
+    // $.each(array2, function (index, value) {
+    // })
+
+
+for(let i = 0; i < array2[0].length; i++){
+    console.log(array2[0][i]);
+    console.log(array2[1][i]);
+    
+    var obj = [
+        {
+            'A': array2[0][i],
+            'B': array2[1][i],
+        },
+    ];
+    console.log(obj)
+}
+
+console.log(ABC)
+
+
+let hash = {
+    key0: "value0",
+    key1: "value1",
+  };
+  console.log(hash);
+  for (let key in hash) {
+    console.log('key:' + key + ' value:' + hash[key]);
+  }
+
+
 
 
 

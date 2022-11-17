@@ -265,11 +265,14 @@ $(function () {
         //それぞれのデータを変数に入れる
         let yesterday = record[0];
         let today = record[1];
+        $('.yesterday').html(yesterday);
+        $('.today').html(today);
 
-
-
-
-        $('.main__rec__compar__valu')
+        //前回と今回の差を計算
+        let between = yesterday - today;
+        console.log(between)
+        // 計算した値を表示
+        $('.main__rec__compar__valu').html(between);
 
         if (yesterday < today) {
             $(".main__rec__up").addClass("UP");

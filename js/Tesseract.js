@@ -12,9 +12,10 @@ const recognize = function (evt) {
         .then(function (result) {
             let replace = result.data.text.replaceAll(/[^0-9]/g, '');
             document.querySelector('#result').value = replace;
+            pic = replace;
         });
 };
-
+let pic
 //関数宣言終了
 //関数を実行
 //ファイル選択ボタンを指定して宣言

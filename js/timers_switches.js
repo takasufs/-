@@ -16,6 +16,7 @@
         /* 描画 */
         timer.textContent = `${m}:${s}`;
 
+
         timeoutid = setTimeout(() => {
             //再帰呼び出し
             countUp();
@@ -49,34 +50,33 @@
     // Startボタンクリック
     // …タイマーを開始します
     start.addEventListener('click', () => {
-        if (start.classList.contains('inactive') === true)
-        {
+        if (start.classList.contains('inactive') === true) {
             return;
         }
         // ボタンをタイマー'動作中'状態とする
         setButtonStateRunning();
         startTime = Date.now();
         countUp();
+
     });
 
     // Stopボタンクリック
     // …タイマーを停止します
     stop.addEventListener('click', () => {
-        if (stop.classList.contains('inactive') === true)
-        {
+        if (stop.classList.contains('inactive') === true) {
             return;
         }
         // タイマーを'停止中'状態とする
         setButtonStateStopped();
         clearTimeout(timeoutid);
         elapsedTime += Date.now() - startTime;
+        console.log()
     });
 
     // Resetボタンクリック
     // …タイマーを「00:00.000」で上書きします
     reset.addEventListener('click', () => {
-        if (reset.classList.contains('inactive') === true)
-        {
+        if (reset.classList.contains('inactive') === true) {
             return;
         }
         // ボタンを'初期'状態とする
@@ -84,4 +84,5 @@
         timer.textContent = '00:00';
         elapsedTime = 0;
     });
+
 }

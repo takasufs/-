@@ -42,7 +42,7 @@
             }
 
             &__valu::after {
-                content: "KW";
+                content: "Kwh";
             }
         }
 
@@ -109,12 +109,12 @@
 
             .strong {
                 font-size: 30px;
-                padding-left: (86em/30);
+                padding-left: (8em/30);
             }
         }
 
         &__ttl::after {
-            content: "KW";
+            content: "Kwh";
         }
     }
 

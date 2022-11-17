@@ -86,36 +86,49 @@ $(function () {
     // })
 
 
-for(let i = 0; i < array2[0].length; i++){
-    console.log(array2[0][i]);
-    console.log(array2[1][i]);
-    
-    var obj = [
-        {
-            'A': array2[0][i],
-            'B': array2[1][i],
-        },
-    ];
-    console.log(obj)
-}
+    for (let i = 0; i < array2[0].length; i++) {
+        console.log(array2[0][i]);
+        console.log(array2[1][i]);
 
-console.log(ABC)
+        var obj = [
+            {
+                'A': array2[0][i],
+                'B': array2[1][i],
+            },
+        ];
+        console.log(obj)
+    }
 
-
-let hash = {
-    key0: "value0",
-    key1: "value1",
-  };
-  console.log(hash);
-  for (let key in hash) {
-    console.log('key:' + key + ' value:' + hash[key]);
-  }
+    console.log(ABC)
 
 
+    let hash = {
+        key0: "value0",
+        key1: "value1",
+    };
+    console.log(hash);
+    for (let key in hash) {
+        console.log('key:' + key + ' value:' + hash[key]);
+    }
 
 
 
 
+
+    var user1 = {
+        name: '太郎',
+        area: 'tokyo'
+    }
+
+    var user2 = {
+        name: '花子',
+        age: 28
+    }
+
+
+    var result = $.extend(user1, user2);
+
+    console.log(result);
 
 
 

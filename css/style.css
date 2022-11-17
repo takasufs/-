@@ -46,12 +46,16 @@ body {
   height: 70px;
 }
 .header__nav__gnav {
+  padding-top: 13px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .header__nav__gnav__item {
   margin: auto 0;
+}
+.header__nav__gnav__item__icon {
+  margin-left: 80%;
 }
 .main {
   background-color: #EBFFF9;

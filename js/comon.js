@@ -56,16 +56,20 @@ $(function () {
     data02 = JSON.parse(data02);
     console.log(data02);
 
-    date = data01;
-    Electricity = data02;
+
 
     console.log(date);
     console.log(Electricity);
+    // アプリを使用した時、最初と2回目の処理の分岐
     if (data01 == null) {
-        console.log("a")
+        // 最初だとlocalestreageのデータを取得する処理をしない
+        console.log("1回目最初")
 
     } else {
-        console.log("b")
+        // 2回目の処理　localestreageのデータを取得する処理
+        console.log("2回目")
+        date = data01;
+        Electricity = data02;
     }
 
 

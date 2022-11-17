@@ -17,8 +17,9 @@ body {
   &__nav {
 
     &__gnav {
+      padding-top: 13px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       flex-wrap: wrap;
 
       &__item {
@@ -26,7 +27,9 @@ body {
 
         &__link {}
 
-        &__icon {}
+        &__icon {
+          margin-left: 80%;
+        }
 
         &__bell {}
       }
@@ -265,8 +268,8 @@ body {
           width: 21px;
           height: 17px;
           position: absolute;
-          top: (20em/15);
-          left: (17em/15);
+          top: 16.3333333333px;
+          left: 20.1333333333px;
         }
 
         &__txt {

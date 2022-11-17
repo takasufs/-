@@ -5,38 +5,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ローカルストレージ</title>
+    <title>Eneka</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/comon.css"> -->
     <style>
-        .box {
-            border: 1px solid #000;
-            width: 45%;
-            background-color: #f5f5f5;
-            border-radius: 10px;
-            margin: 20px 0;
+        .balloon1-top {
+            position: relative;
+            display: inline-block;
+            margin: 1.5em 0;
+            padding: 7px 10px;
+            min-width: 120px;
+            max-width: 100%;
+            color: #555;
+            font-size: 16px;
+            background: #e0edff;
+            float: right;
+            /* right: 4%; */
+        }
+
+        .balloon1-top:before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: 90%;
+            margin-left: -15px;
+            border: 15px solid transparent;
+            border-bottom: 15px solid #e0edff;
+
+        }
+
+        .balloon1-top p {
+            margin: 0;
+            padding: 0;
         }
     </style>
 </head>
 
-<body>
-    <div class="">
-        <p>計測定数</p>
-        <input type="number" name="rev" value="" id="constant" required>
-        <p>タイム</p>
-        <input type="number" name="time" value="" id="time" required>
-        <div class="btn01">計算</div>
-    </div>
 
-    <div class="btn02">表示</div>
-    <div class="btn03">削除</div>
-    <div id="box" class="box">
-        <!-- <div class="box__list">
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <nav class="header__nav">
+                <ul class="header__nav__gnav">
+                    <li class="header__nav__gnav__item"><a href="./index.html"
+                            class="header__nav__gnav__item__link"><img src="./images/comon/app_icon_demo.png" alt=""
+                                class="header__nav__gnav__item__icon"></a>
+                    </li>
+                    <li class="header__nav__gnav__item"><a href="#" class="header__nav__gnav__item__link"><img
+                                src="./images/comon/header_bell_icon.png" alt=""
+                                class="header__nav__gnav__item__bell"></a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- <div class="balloon1-top">
+                    <p>こんにちは。これは例です。</p>
+                </div> -->
+        <div class="">
+            <p class="abs">計測定数</p>
+            <input type="number" name="rev" value="" id="constant" required>
+            <p>タイム</p>
+            <input type="number" name="time" value="" id="time" required>
+            <div class="btn01">計算</div>
+        </div>
+
+        <div class="btn02">表示</div>
+        <div class="btn03">削除</div>
+        <div id="box" class="box">
+            <!-- <div class="box__list">
             <p id="day" class="day">日付：</p>
             <h4 id="value" class="value">消費電力：</h4>
         </div> -->
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="./js/comon.js"></script>
-    <!-- <script src="/js/local.js"></script> -->
+        </div>
+    </main>
+
 </body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<!-- <script src="./js/comon.js"></script> -->
+<script src="/js/local.js"></script>
+
 
 </html>

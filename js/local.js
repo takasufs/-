@@ -137,4 +137,45 @@ $(function () {
     // // 初期化
     // localStorage.clear()
 
+
+
+
+
+    let date01 = [0, 0, 0, 0, 0, 0, 0,]
+    let url = `https://www.google.com/`;
+    console.log(url)
+    $(".header__nav__gnav__item__link").on('click', function () {
+
+        // $('.balloon1-top').remove();
+        console.log("おめでとう")
+
+
+        // if (date01.length == 7) {
+        //     $('.header__nav').append(`<div class="balloon1-top"></div>`);
+        //     $('.balloon1-top').append(`<p></p>`);
+        //     $('.balloon1-top p').append(`<a href="${url}">${url}</a>`)
+        // } else {
+        //     console.log("がんばっれ")
+        // }
+    })
+
+    let num = 0;
+    $(".header__nav__gnav__item__link").click(function () {
+        $(this).data("click", ++num);
+
+        if (date01.length == 7) {
+            $('.header__nav').append(`<div class="balloon1-top"></div>`);
+            $('.balloon1-top').append(`<p>節電をよく頑張ったね！これからも頑張って行こう！</p>`);
+            $('.balloon1-top p').append(`<br><a href="${url}">${url}</a>`)
+        } else {
+            console.log("がんばっれ")
+        }
+        let click = $(this).data("click");
+        if ((click % 2) == 0) {
+            $('.balloon1-top').remove();
+        }
+        return false;
+        console.log()
+    });
+
 });

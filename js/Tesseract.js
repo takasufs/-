@@ -10,7 +10,7 @@ const recognize = function (evt) {
         'eng',
     )
         .then(function (result) {
-            let replace = result.data.text.replaceAll("!?@#$%&*()<>_-+=/:;'\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", '');
+            let replace = result.data.text.replaceAll(/[^0-9]/g, '');
             document.querySelector('#result').value = replace;
         });
 };

@@ -102,6 +102,8 @@ body {
   display: inline-block;
   border-radius: 100%;
   top: 16.8em;
+  width: 50px;
+  height: 50px;
 }
 .main__form__value .upbtn01 {
   left: 9.0666666667em;
@@ -244,8 +246,8 @@ body {
   width: 21px;
   height: 17px;
   position: absolute;
-  top: 1.3333333333em;
-  left: 1.1333333333em;
+  top: 16.3333333333px;
+  left: 20.1333333333px;
 }
 .footer__nav__gnav .gnav03__txt {
   font-size: 8px;
@@ -389,3 +391,4 @@ body {
 .main .rec__ttl::after {
   content: "Kwh";
 }
+/*# sourceMappingURL=style.css.map */

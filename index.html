@@ -37,7 +37,7 @@
                 <!-- value01 -->
                 <form action="#" method="post" class="main__form__value">
                     <p class="main__form__value__txt">①rev/kWhをかざす</p>
-                    <textarea name="comment" cols="10" rows="2" class="value01" id="ocrResult"></textarea>
+                    <textarea name="comment" cols="10" rows="2" class="value01" id="result"></textarea>
                     <!-- ファイルを選択 -->
                     <label class="upbtn upbtn01">
                         <input type="file" name="example" accept="image/jpeg, image/png" id="uploader" value="">
@@ -61,7 +61,8 @@
                     <canvas id="board" width="150" height="224" class="main__ans__value__canvas"></canvas>
                     <!-- canvas内容 -->
                     <script>
-                        window.onload = () => {
+                        window.onload = () =>
+                        {
                             // canvas準備
                             const board = document.querySelector("#board");
                             const ctx = board.getContext("2d");
@@ -70,12 +71,14 @@
                             // 画像読み込み
                             const chara02 = new Image();
                             chara02.src = "./images/lp/lp_light_upper2.png";  // 画像のURLを指定
-                            chara02.onload = () => {
+                            chara02.onload = () =>
+                            {
                                 ctx.drawImage(chara02, 0, 0);
                             };
                             const chara = new Image();
                             chara.src = "./images/lp/lp_light_bottom.png";  // 画像のURLを指定
-                            chara.onload = () => {
+                            chara.onload = () =>
+                            {
                                 ctx.drawImage(chara, 16, 138);
                             };
 
@@ -92,7 +95,8 @@
                             canvas.fill();
                         };
 
-                        function Yresetbtn() {
+                        function Yresetbtn()
+                        {
                             let Yreset = document.querySelector("#Yreset");
 
                             if (Yreset.value == "リセット") {
@@ -149,7 +153,7 @@
         </div>
     </footer>
 
-    <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+    <script src="https://unpkg.com/tesseract.js@v3.0.3/dist/tesseract.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="/js/Tesseract.js"></script>
     <script src="/js/timers_switches.js"></script>

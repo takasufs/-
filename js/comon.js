@@ -171,9 +171,10 @@ $(function () {
 
 
     //recognize関数の宣言
-    const recognize = function (evt) {
+    $("#uploader").change(function (evt) {
         const files = evt.target.files;
-        if (files.length == 0) {
+        if (files.length == 0)
+        {
             return;
         }
         Tesseract.recognize(
@@ -187,23 +188,16 @@ $(function () {
                 console.log(rev_kwh)
             });
 
-    };
+    });
 
 
-    //関数宣言終了
-    //関数を実行
-    //ファイル選択ボタンを指定して宣言
-    const elm = document.getElementById('uploader');
-    //ファイルの中に写真が追加されたらrecognize関数を実行
-    elm.addEventListener('change', recognize);
 
 
     // /* ========================= timers_switches.js ========================= */
     {
-        const timer = document.getElementById('timer');
-        const start = document.getElementById('start');
-        const stop = document.getElementById('stop');
-        const reset = document.getElementById('reset');
+
+
+
 
         let startTime;       // Startボタンクリック時の時刻
         let timeoutid;       // ID
@@ -226,32 +220,32 @@ $(function () {
 
         // 状態:初期 または Reset直後
         function setButtonStateInitial() {
-            start.classList.remove('inactive'); // 活性
-            stop.classList.add('inactive');    // 非活性
-            reset.classList.add('inactive');   // 非活性
+            $('#start').removeClass(); // 活性
+            $('#stop').addClass('inactive');    // 非活性
+            $('#reset').addClass('inactive');   // 非活性
         }
 
         // 状態:タイマー動作中
         function setButtonStateRunning() {
-            start.classList.add('inactive');   // 非活性
-            stop.classList.remove('inactive');  // 活性
-            reset.classList.add('inactive');  // 非活性
+            $('#start').addClass('inactive');   // 非活性
+            $('#stop').removeClass();  // 活性
+            $('#reset').addClass('inactive');  // 非活性
         }
 
         // 状態:タイマー停止中
         function setButtonStateStopped() {
-            start.classList.add('inactive'); // 活性
-            stop.classList.add('inactive');    // 非活性
-            reset.classList.remove('inactive'); // 活性
+            $('#start').addClass('inactive'); // 活性
+            $('#stop').addClass('inactive');    // 非活性
+            $('#reset').removeClass(); // 活性
         }
 
-        // ボタンを'初期'状態とする
-        setButtonStateInitial()
+
 
         // Startボタンクリック
         // …タイマーを開始します
-        start.addEventListener('click', () => {
-            if (start.classList.contains('inactive') === true) {
+        $('#start').on('click', () => {
+            if ($('#start').hasClass('inactive') === true)
+            {
                 return;
             }
             // ボタンをタイマー'動作中'状態とする
@@ -262,8 +256,9 @@ $(function () {
 
         // Stopボタンクリック
         // …タイマーを停止します
-        stop.addEventListener('click', () => {
-            if (stop.classList.contains('inactive') === true) {
+        $('#stop').on('click', () => {
+            if ($('#stop').hasClass('inactive') === true)
+            {
                 return;
             }
             // タイマーを'停止中'状態とする
@@ -276,8 +271,9 @@ $(function () {
 
         // Resetボタンクリック
         // …タイマーを「00:00.000」で上書きします
-        reset.addEventListener('click', () => {
-            if (reset.classList.contains('inactive') === true) {
+        $('#reset').on('click', () => {
+            if ($('#reset').hasClass('inactive') === true)
+            {
                 return;
             }
             // ボタンを'初期'状態とする
@@ -314,11 +310,13 @@ $(function () {
     console.log(date);
     console.log(Electricity);
     // アプリを使用した時、最初と2回目の処理の分岐
-    if (data01 == null) {
+    if (data01 == null)
+    {
         // 最初だとlocalestreageのデータを取得する処理をしない
         console.log("1回目最初")
 
-    } else {
+    } else
+    {
         // 2回目の処理　localestreageのデータを取得する処理
         console.log("2回目")
         date = data01;
@@ -326,7 +324,39 @@ $(function () {
     }
 
 
-    $(".Yreset").on('click', function () {
+    /* ===== canvas ===== */
+    $(window).on("load", () => {
+        // canvas準備
+        let ctx = $("#board")[0].getContext("2d");
+        ctx.fillRect(10, 10, 0, 10);
+        ctx.fillStyle = "#000";
+        // 画像読み込み
+        const chara02 = new Image();
+        chara02.src = "./images/lp/lp_light_upper2.png";  // 画像のURLを指定
+        chara02.onload = () => {
+            ctx.drawImage(chara02, 0, 0);
+        };
+        const chara = new Image();
+        chara.src = "./images/lp/lp_light_bottom.png";  // 画像のURLを指定
+        chara.onload = () => {
+            ctx.drawImage(chara, 16, 138);
+        };
+
+        let y = 138 - max;
+        let canvas = $("#board")[0].getContext("2d");
+        canvas.beginPath();
+        canvas.strokeStyle = '#FFF100';
+        canvas.fillStyle = '#FFF100';
+        canvas.moveTo(0, 138);
+        canvas.lineTo(0, y);
+        canvas.lineTo(150, y);
+        canvas.lineTo(150, 138);
+        canvas.fill();
+    });
+
+    let max = 1;
+    $("#Yreset").on('click', function () {
+
         // console.log("hello");
 
         // 計測定数
@@ -345,41 +375,58 @@ $(function () {
         Kwh = watt * 24;
         console.log(Kwh);
 
+        /* ===== canvas計算 ===== */
+        max = 69;
+        y = 138 - max;
+        console.log(max);
+        console.log(y);
+        //0.42
+        //canvas組み込む
+
         /* ===== ローカルストレージに記録 ===== */
 
-        if (window.localStorage) {// 使える時
-            console.log("localStorageが使える");
+        if (window.localStorage)
+        {// 使える時
+            if (Yreset.value == "リセット")
+            {
+                Yreset.value = "計算";
+            } else
+            {
+                Yreset.value = "リセット";
 
-            // ローカルホスト保存　日にち(date)
-            // 配列に日付を入れる
-            date.push(days);
-            // console.log(date);
+                console.log("localStorageが使える");
 
-            // jsonにデータ形式を変える
-            json01 = JSON.stringify(date, undefined, 1);
-            // console.log(json01)
-            localStorage.setItem('day', json01);
+                // ローカルホスト保存　日にち(date)
+                // 配列に日付を入れる
+                date.push(days);
+                // console.log(date);
 
-            data01 = localStorage.getItem('day');
-            data01 = JSON.parse(data01);
-            console.log(data01);
+                // jsonにデータ形式を変える
+                json01 = JSON.stringify(date, undefined, 1);
+                // console.log(json01)
+                localStorage.setItem('day', json01);
+
+                data01 = localStorage.getItem('day');
+                data01 = JSON.parse(data01);
+                console.log(data01);
 
 
-            // ローカルホスト保存　消費電力(Electricity)
-            // 配列に計算結果を入れる
-            Electricity.push(Kwh);
-            console.log(Electricity);
+                // ローカルホスト保存　消費電力(Electricity)
+                // 配列に計算結果を入れる
+                Electricity.push(Kwh);
+                console.log(Electricity);
 
-            // jsonにデータ形式を変える
-            json02 = JSON.stringify(Electricity, undefined, 1);
-            console.log(json02)
-            localStorage.setItem('value', json02);
+                // jsonにデータ形式を変える
+                json02 = JSON.stringify(Electricity, undefined, 1);
+                console.log(json02)
+                localStorage.setItem('value', json02);
 
-            data02 = localStorage.getItem('value');
-            data02 = JSON.parse(data02);
-            console.log(data02);
-
-        } else { //使えない時
+                data02 = localStorage.getItem('value');
+                data02 = JSON.parse(data02);
+                console.log(data02);
+            }
+        } else
+        { //使えない時
             console.log("ローカルストレージ使用できません");
         }
     });
@@ -433,13 +480,16 @@ $(function () {
         // 計算した値を表示
         $('.main__rec__compar__valu').html(between);
 
-        if (yesterday < today) {
+        if (yesterday < today)
+        {
             $(".main__rec__up").addClass("UP");
             console.log("前回と比べて増えた");
-        } else if (yesterday > today) {
+        } else if (yesterday > today)
+        {
             $(".main__rec__down").addClass("DOWN");
             console.log("前回と比べて減った");
-        } else {
+        } else
+        {
             console.log("同じ値");
         }
     });
@@ -450,7 +500,8 @@ $(function () {
         $(".main__record__table").empty();
         console.log(data01);
         console.log(data02);
-        for (let i = 0; i < data01.length; i++) {
+        for (let i = 0; i < data01.length; i++)
+        {
             $(".main__record__table").append(`<div class="box__list${i}"></div>`);
             $(`.box__list${i}`).append(`<p id="day" class="day${i}">日付：${data01[i]}</p>`);
             $(`.box__list${i}`).append(`<h4 id="value" class="value${i}">消費電力:${data02[i]}khw</h4>`)

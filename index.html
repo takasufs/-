@@ -16,7 +16,7 @@
         <div class="header__inner">
             <nav class="header__nav">
                 <ul class="header__nav__gnav">
-                    <li class="header__nav__gnav__item"><a href="https://bell-cocoro.org/Eneka/index.html"
+                    <li class="header__nav__gnav__item"><a href="./index.html"
                             class="header__nav__gnav__item__link"><img src="./images/comon/app_icon_demo.png" alt=""
                                 class="header__nav__gnav__item__icon"></a>
                     </li>
@@ -60,8 +60,7 @@
                     <canvas id="board" width="150" height="224" class="main__ans__value__canvas"></canvas>
                     <!-- canvas内容 -->
                     <script>
-                        window.onload = () =>
-                        {
+                        window.onload = () => {
                             // canvas準備
                             const board = document.querySelector("#board");
                             const ctx = board.getContext("2d");
@@ -70,14 +69,12 @@
                             // 画像読み込み
                             const chara02 = new Image();
                             chara02.src = "./images/lp/lp_light_upper2.png";  // 画像のURLを指定
-                            chara02.onload = () =>
-                            {
+                            chara02.onload = () => {
                                 ctx.drawImage(chara02, 0, 0);
                             };
                             const chara = new Image();
                             chara.src = "./images/lp/lp_light_bottom.png";  // 画像のURLを指定
-                            chara.onload = () =>
-                            {
+                            chara.onload = () => {
                                 ctx.drawImage(chara, 16, 138);
                             };
 
@@ -94,8 +91,7 @@
                             canvas.fill();
                         };
 
-                        function Yresetbtn()
-                        {
+                        function Yresetbtn() {
                             let Yreset = document.querySelector("#Yreset");
 
                             if (Yreset.value == "リセット") {
@@ -124,8 +120,7 @@
                     <!-- HOME -->
                     <li class="footer__nav__gnav__item gnav01">
 
-                        <a href="https://bell-cocoro.org/Eneka/index.html"
-                            class="footer__nav__gnav__item__link gnav01__link">
+                        <a href="./index.html" class="footer__nav__gnav__item__link gnav01__link">
                             <img src="./images/comon/footer_nav_icon_HOME.png" alt=""
                                 class="footer__nav__gnav__item__img gnav01__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav01__txt small">HOME</p>
@@ -133,8 +128,7 @@
                     </li>
                     <!-- LIST -->
                     <li class="footer__nav__gnav__item gnav02">
-                        <a href="https://bell-cocoro.org/Eneka/record/index.html"
-                            class="footer__nav__gnav__item__link gnav02__link">
+                        <a href="./record/index.html" class="footer__nav__gnav__item__link gnav02__link">
                             <img src="./images/comon/footer_nav_icon_List.png" alt=""
                                 class="footer__nav__gnav__item__img gnav02__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav02__txt small">List</p>
@@ -143,8 +137,7 @@
                     <!-- RANKING -->
                     <li class="footer__nav__gnav__item gnav03">
 
-                        <a href="https://bell-cocoro.org/Eneka/ranking/index.html"
-                            class="footer__nav__gnav__item__link gnav03__link">
+                        <a href="./ranking/index.html" class="footer__nav__gnav__item__link gnav03__link">
                             <img src="./images/comon/footer_nav_icon_Ranking.png" alt=""
                                 class="footer__nav__gnav__item__img gnav03__img"><br>
                             <p class="footer__nav__gnav__item__txt gnav03__txt small">Ranking</p>

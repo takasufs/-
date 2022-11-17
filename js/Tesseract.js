@@ -1,30 +1,20 @@
 //recognize関数の宣言
 const recognize = function (evt) {
-    //読み込むファイルの宣言
     const files = evt.target.files;
-    //ファイルの中身がないときには実行しない
     if (files.length == 0)
     {
         return;
     }
-    //Tesseract.jsの実行
-    Tesseract
-        .recognize(files[0], { lang: 'eng', tessedit_pageseg_mode: "PSM_SINGLE_LINE", tessedit_char_whitelist: '0123456789', VAR_CHAR_BLACKLIST: "!?@#$%&*()<>_-+=/:;'\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" })
-        .progress(function (p) {
-            // 進歩状況の表示
-            //進捗状況を表示するspanタグを指定
-            let progressArea = document.getElementById("progress");
-            //spanタグに埋め込む
-            progressArea.innerText = p.status + " " + Math.round(p.progress * 100) + "%";
-        })
+    Tesseract.recognize(
+        files[0],
+        'eng',
+    )
         .then(function (result) {
-            // 結果の表示
-            //テキストエリアを指定
-            let textarea = document.getElementById("ocrResult");
-            //テキストエリアに結果を埋め込む
-            textarea.value = result.text;
+            let replace = result.data.text.replaceAll(/[^0-9]/g, '');
+            document.querySelector('#result').value = replace;
         });
-}
+};
+
 //関数宣言終了
 //関数を実行
 //ファイル選択ボタンを指定して宣言

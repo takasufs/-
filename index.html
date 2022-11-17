@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eneka</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./css/comon.css">
 </head>
 
 
@@ -35,16 +36,18 @@
             <div class="main__form">
                 <!-- value01 -->
                 <form action="#" method="post" class="main__form__value">
-                    <p class="main__form__value__txt">①Hzをかざします</p>
-                    <textarea name="comment" cols="10" rows="2" class="value01" id="ocrResult"></textarea>
+                    <p class="main__form__value__txt">①rev/kWhをかざす</p>
+                    <textarea name="comment" cols="10" rows="2" class="value01" id="result"></textarea>
                     <!-- ファイルを選択 -->
+                    <img src="./images/lp/lp_btn_start.png" class="upbtn upbtn01" id="start">
                     <label class="upbtn upbtn01">
                         <input type="file" name="example" accept="image/jpeg, image/png" id="uploader" value="">
+                        
                     </label>
                 </form>
                 <!-- value02 -->
                 <form action="#" method="post" class="main__form__value">
-                    <p class="main__form__value__txt">②タイマー</p>
+                    <p class="main__form__value__txt">②AL板の一周を測る</p>
                     <div name="comment" cols="10" rows="2" class="value02" id="timer">00:00</div>
                     <img src="./images/lp/lp_btn_start.png" class="upbtn upbtn02" id="start">
                     <img src="./images/lp/lp_btn_stop.png" class="upbtn upbtn02" id="stop">
@@ -60,7 +63,8 @@
                     <canvas id="board" width="150" height="224" class="main__ans__value__canvas"></canvas>
                     <!-- canvas内容 -->
                     <script>
-                        window.onload = () => {
+                        window.onload = () =>
+                        {
                             // canvas準備
                             const board = document.querySelector("#board");
                             const ctx = board.getContext("2d");
@@ -69,12 +73,14 @@
                             // 画像読み込み
                             const chara02 = new Image();
                             chara02.src = "./images/lp/lp_light_upper2.png";  // 画像のURLを指定
-                            chara02.onload = () => {
+                            chara02.onload = () =>
+                            {
                                 ctx.drawImage(chara02, 0, 0);
                             };
                             const chara = new Image();
                             chara.src = "./images/lp/lp_light_bottom.png";  // 画像のURLを指定
-                            chara.onload = () => {
+                            chara.onload = () =>
+                            {
                                 ctx.drawImage(chara, 16, 138);
                             };
 
@@ -91,7 +97,8 @@
                             canvas.fill();
                         };
 
-                        function Yresetbtn() {
+                        function Yresetbtn()
+                        {
                             let Yreset = document.querySelector("#Yreset");
 
                             if (Yreset.value == "リセット") {
@@ -148,7 +155,7 @@
         </div>
     </footer>
 
-    <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+    <script src="https://unpkg.com/tesseract.js@v3.0.3/dist/tesseract.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="/js/Tesseract.js"></script>
     <script src="/js/timers_switches.js"></script>

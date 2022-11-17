@@ -125,9 +125,6 @@ $(function () {
             console.log("ローカルストレージ使用できません");
         }
     });
-
-
-
     $(".btn02").on("click", function () {
         $(".box").empty();
         console.log(data01);
@@ -156,8 +153,6 @@ $(function () {
             //何も起きない
             return false
         }
-
-
 
     })
     // ローカルストレージの保存数

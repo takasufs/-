@@ -36,7 +36,260 @@ $(function () {
     days = (Year + "/" + month + "/" + day);
     // console.log(days);
 
+
+
     /* ========================= test02.js ========================= */
+    // let date = [];
+    // let Electricity = [];
+
+    // /* ===== 記録書き出し・表示 ===== */
+    // // 読み込んだ時に過去の記録を表示
+    // $(window).on('load', function () {
+
+    // });
+    // console.log(data01)
+    // // Electricityのローカルストレージを配列に入れる
+    // data01 = localStorage.getItem('day');
+    // data01 = JSON.parse(data01);
+    // console.log(data01);
+
+    // // Electricityのローカルストレージを配列に入れる
+    // data02 = localStorage.getItem('value');
+    // data02 = JSON.parse(data02);
+    // console.log(data02);
+
+
+
+    // console.log(date);
+    // console.log(Electricity);
+    // // アプリを使用した時、最初と2回目の処理の分岐
+    // if (data01 == null) {
+    //     // 最初だとlocalestreageのデータを取得する処理をしない
+    //     console.log("1回目最初")
+
+    // } else {
+    //     // 2回目の処理　localestreageのデータを取得する処理
+    //     console.log("2回目")
+    //     date = data01;
+    //     Electricity = data02;
+    // }
+
+
+    // $(".btn01").on('click', function () {
+    //     // console.log("hello");
+
+    //     // 計測定数
+    //     rev_kwh = $("#constant").val();
+    //     console.log(rev_kwh);
+
+    //     // タイム
+    //     time = $("#time").val();
+    //     console.log(time);
+
+    //     /* ===== 計算式 ===== */
+    //     watt = 3600 * 1000 / (time * rev_kwh);
+    //     console.log(watt)
+    //     Kwh = watt / 1000;
+    //     Kwh = watt * 24;
+    //     console.log(Kwh);
+
+    //     /* ===== ローカルストレージに記録 ===== */
+
+    //     if (window.localStorage) {// 使える時
+    //         console.log("localStorageが使える");
+
+    //         // ローカルホスト保存　日にち(date)
+    //         // 配列に日付を入れる
+    //         date.push(days);
+    //         // console.log(date);
+
+    //         // jsonにデータ形式を変える
+    //         json01 = JSON.stringify(date, undefined, 1);
+    //         // console.log(json01)
+    //         localStorage.setItem('day', json01);
+
+    //         data01 = localStorage.getItem('day');
+    //         data01 = JSON.parse(data01);
+    //         console.log(data01);
+
+
+    //         // ローカルホスト保存　消費電力(Electricity)
+    //         // 配列に計算結果を入れる
+    //         Electricity.push(Kwh);
+    //         console.log(Electricity);
+
+    //         // jsonにデータ形式を変える
+    //         json02 = JSON.stringify(Electricity, undefined, 1);
+    //         console.log(json02)
+    //         localStorage.setItem('value', json02);
+
+    //         data02 = localStorage.getItem('value');
+    //         data02 = JSON.parse(data02);
+    //         console.log(data02);
+
+    //     } else { //使えない時
+    //         console.log("ローカルストレージ使用できません");
+    //     }
+    // });
+    // $(".btn02").on("click", function () {
+    //     $(".box").empty();
+    //     console.log(data01);
+    //     console.log(data02);
+    //     for (let i = 0; i < data01.length; i++) {
+    //         $(".box").append(`<div class="box__list${i}"></div>`);
+    //         $(`.box__list${i}`).append(`<p id="day" class="day${i}">日付：${data01[i]}</p>`);
+    //         $(`.box__list${i}`).append(`<h4 id="value" class="value${i}">消費電力:${data02[i]}</h4>`)
+    //     }
+    // })
+
+    // /* ===== データ削除 ===== */
+    // $(".btn03").on("click", function () {
+
+    //     // 確認ダイアログ
+    //     if (confirm('削除してもよろしいですか？（＊この操作は取り消せません）')) {
+    //         // 「OK」をクリックした際の処理を記述
+    //         $(".box").empty();
+    //         // ローカルストレージ全削除
+    //         localStorage.clear();
+
+    //         // 配列内のデータを削除
+
+    //     } else {
+    //         //キャンセルした場合
+    //         //何も起きない
+    //         return false
+    //     }
+
+    // })
+    // // ローカルストレージの保存数
+    // const length = localStorage.length;
+    // console.log(length);
+
+    /* ========================= Tesseract.js ========================= */
+    // 読みった数字のデータを入れる変数
+    // rev_kwh;
+
+
+    //recognize関数の宣言
+    const recognize = function (evt) {
+        const files = evt.target.files;
+        if (files.length == 0) {
+            return;
+        }
+        Tesseract.recognize(
+            files[0],
+            'eng',
+        )
+            .then(function (result) {
+                let replace = result.data.text.replaceAll(/[^0-9]/g, '');
+                document.querySelector('#result').value = replace;
+                rev_kwh = replace;
+                console.log(rev_kwh)
+            });
+
+    };
+
+
+    //関数宣言終了
+    //関数を実行
+    //ファイル選択ボタンを指定して宣言
+    const elm = document.getElementById('uploader');
+    //ファイルの中に写真が追加されたらrecognize関数を実行
+    elm.addEventListener('change', recognize);
+
+
+    // /* ========================= timers_switches.js ========================= */
+    {
+        const timer = document.getElementById('timer');
+        const start = document.getElementById('start');
+        const stop = document.getElementById('stop');
+        const reset = document.getElementById('reset');
+
+        let startTime;       // Startボタンクリック時の時刻
+        let timeoutid;       // ID
+        let elapsedTime = 0; // StartからStopまでの経過時間
+
+        function countUp() {
+            const d = new Date(Date.now() - startTime + elapsedTime);
+            /* padStart()で二桁または三桁固定表示とする */
+            const m = String(d.getMinutes()).padStart(2, '0');
+            const s = String(d.getSeconds()).padStart(2, '0');
+            /* 描画 */
+            timer.textContent = `${m}:${s}`;
+
+
+            timeoutid = setTimeout(() => {
+                //再帰呼び出し
+                countUp();
+            }, 10);
+        }
+
+        // 状態:初期 または Reset直後
+        function setButtonStateInitial() {
+            start.classList.remove('inactive'); // 活性
+            stop.classList.add('inactive');    // 非活性
+            reset.classList.add('inactive');   // 非活性
+        }
+
+        // 状態:タイマー動作中
+        function setButtonStateRunning() {
+            start.classList.add('inactive');   // 非活性
+            stop.classList.remove('inactive');  // 活性
+            reset.classList.add('inactive');  // 非活性
+        }
+
+        // 状態:タイマー停止中
+        function setButtonStateStopped() {
+            start.classList.add('inactive'); // 活性
+            stop.classList.add('inactive');    // 非活性
+            reset.classList.remove('inactive'); // 活性
+        }
+
+        // ボタンを'初期'状態とする
+        setButtonStateInitial()
+
+        // Startボタンクリック
+        // …タイマーを開始します
+        start.addEventListener('click', () => {
+            if (start.classList.contains('inactive') === true) {
+                return;
+            }
+            // ボタンをタイマー'動作中'状態とする
+            setButtonStateRunning();
+            startTime = Date.now();
+            countUp();
+        });
+
+        // Stopボタンクリック
+        // …タイマーを停止します
+        stop.addEventListener('click', () => {
+            if (stop.classList.contains('inactive') === true) {
+                return;
+            }
+            // タイマーを'停止中'状態とする
+            setButtonStateStopped();
+            clearTimeout(timeoutid);
+            elapsedTime += Date.now() - startTime;
+            time = Math.round((elapsedTime / 1000));// 計算式の値のタイムを取得
+            console.log(time);
+        });
+
+        // Resetボタンクリック
+        // …タイマーを「00:00.000」で上書きします
+        reset.addEventListener('click', () => {
+            if (reset.classList.contains('inactive') === true) {
+                return;
+            }
+            // ボタンを'初期'状態とする
+            setButtonStateInitial()
+            timer.textContent = '00:00';
+            elapsedTime = 0;
+        });
+    }
+
+
+    /* ========================= index.js ========================= */
+
     let date = [];
     let Electricity = [];
 
@@ -73,18 +326,19 @@ $(function () {
     }
 
 
-    $(".btn01").on('click', function () {
+    $(".Yreset").on('click', function () {
         // console.log("hello");
 
         // 計測定数
-        rev_kwh = $("#constant").val();
-        console.log(rev_kwh);
+        // rev_kwh = $("#constant").val();
+        // console.log(rev_kwh);
 
         // タイム
-        time = $("#time").val();
-        console.log(time);
+        // time = $("#time").val();
+        // console.log(time);
 
         /* ===== 計算式 ===== */
+        console.log(time);
         watt = 3600 * 1000 / (time * rev_kwh);
         console.log(watt)
         Kwh = watt / 1000;
@@ -129,117 +383,8 @@ $(function () {
             console.log("ローカルストレージ使用できません");
         }
     });
-    $(".btn02").on("click", function () {
-        $(".box").empty();
-        console.log(data01);
-        console.log(data02);
-        for (let i = 0; i < data01.length; i++) {
-            $(".box").append(`<div class="box__list${i}"></div>`);
-            $(`.box__list${i}`).append(`<p id="day" class="day${i}">日付：${data01[i]}</p>`);
-            $(`.box__list${i}`).append(`<h4 id="value" class="value${i}">消費電力:${data02[i]}</h4>`)
-        }
-    })
-
-    /* ===== データ削除 ===== */
-    $(".btn03").on("click", function () {
-
-        // 確認ダイアログ
-        if (confirm('削除してもよろしいですか？（＊この操作は取り消せません）')) {
-            // 「OK」をクリックした際の処理を記述
-            $(".box").empty();
-            // ローカルストレージ全削除
-            localStorage.clear();
-
-            // 配列内のデータを削除
-
-        } else {
-            //キャンセルした場合
-            //何も起きない
-            return false
-        }
-
-    })
-    // ローカルストレージの保存数
-    const length = localStorage.length;
-    console.log(length);
 
 
-    /* ========================= index.js ========================= */
-
-    // let date = [];
-    // let Electricity = [];
-
-    // /* ===== 記録書き出し・表示 ===== */
-    // // 読み込んだ時に過去の記録を表示
-    // $(window).on('load', function () {
-    //     // Electricityのローカルストレージを配列に入れる
-    //     data01 = localStorage.getItem('day');
-    //     data01 = JSON.parse(data01);
-    //     console.log(data01);
-
-    //     // Electricityのローカルストレージを配列に入れる
-    //     data02 = localStorage.getItem('value');
-    //     data02 = JSON.parse(data02);
-    //     console.log(data02);
-    // });
-
-
-
-    // $(".Yreset").on('click', function () {
-    //     // console.log("hello");
-
-    //     // 計測定数
-    //     rev_kwh = $("#ocrResult").val();
-    //     console.log(rev_kwh);
-
-    //     // タイム
-    //     time = $("#timer").val();
-    //     console.log(time);
-
-    //     /* ===== 計算式 ===== */
-    //     watt = 3600 * 1000 / (time * rev_kwh);
-    //     console.log(watt)
-    //     Kwh = watt / 1000;
-    //     Kwh = watt * 24;
-    //     console.log(Kwh);
-
-    //     /* ===== ローカルストレージに記録 ===== */
-
-    //     if (window.localStorage) {// 使える時
-    //         console.log("localStorageが使える");
-
-    //         // ローカルホスト保存　日にち(date)
-    //         // 配列に日付を入れる
-    //         date.push(days);
-    //         // console.log(date);
-
-    //         // jsonにデータ形式を変える
-    //         json01 = JSON.stringify(date, undefined, 1);
-    //         console.log(json01)
-    //         localStorage.setItem('day', json01);
-
-    //         data01 = localStorage.getItem('day');
-    //         data01 = JSON.parse(data01);
-    //         console.log(data01);
-
-
-    //         // ローカルホスト保存　消費電力(Electricity)
-    //         // 配列に計算結果を入れる
-    //         Electricity.push(Kwh);
-    //         // console.log(Electricity);
-
-    //         // jsonにデータ形式を変える
-    //         json02 = JSON.stringify(Electricity, undefined, 1);
-    //         localStorage.setItem('value', json02);
-
-    //         data02 = localStorage.getItem('value');
-    //         data02 = JSON.parse(data02);
-    //         console.log(data02);
-
-    //     } else { //使えない時
-    //         console.log("ローカルストレージ使用できません");
-    //     }
-    // });
     // /* ===== データ削除 ===== */
     // $(".btn03").on("click", function () {
 
@@ -249,18 +394,20 @@ $(function () {
     //         $(".box").empty();
     //         // ローカルストレージ全削除
     //         localStorage.clear();
+
+    //         // 配列内のデータを削除
+
     //     } else {
     //         //キャンセルした場合
     //         //何も起きない
     //         return false
     //     }
 
-
-
     // })
-    // // ローカルストレージの保存数
-    // const length = localStorage.length;
-    // console.log(length);
+    // ローカルストレージの保存数
+    const length = localStorage.length;
+    console.log(length);
+
 
 
     // /* ========================= ranking.js ========================= */
@@ -298,7 +445,7 @@ $(function () {
     });
 
     // /* ========================= record.js ========================= */
-
+    //記録の表示
     $(".display").on("click", function () {
         $(".main__record__table").empty();
         console.log(data01);
@@ -309,5 +456,7 @@ $(function () {
             $(`.box__list${i}`).append(`<h4 id="value" class="value${i}">消費電力:${data02[i]}khw</h4>`)
         }
     })
+
+
 
 });

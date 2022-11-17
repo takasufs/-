@@ -1,8 +1,7 @@
 //recognize関数の宣言
 const recognize = function (evt) {
     const files = evt.target.files;
-    if (files.length == 0)
-    {
+    if (files.length == 0) {
         return;
     }
     Tesseract.recognize(

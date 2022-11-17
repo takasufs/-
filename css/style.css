@@ -328,7 +328,7 @@ body {
   padding-bottom: 1.225em;
 }
 .main__rec__compar__valu::after {
-  content: "KW";
+  content: "Kwh";
 }
 .main__rec-now {
   z-index: 20;
@@ -380,8 +380,8 @@ body {
 }
 .main .rec__ttl .strong {
   font-size: 30px;
-  padding-left: 2.8666666667em;
+  padding-left: 0.2666666667em;
 }
 .main .rec__ttl::after {
-  content: "KW";
+  content: "Kwh";
 }

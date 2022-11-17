@@ -109,7 +109,7 @@ margin-left: 80%;
   top: 16.8em;
 }
 .main__form__value .upbtn01 {
-  left: 9.0666666667em;
+  left: 10.066666666700002em;
 }
 .main__form__value .upbtn02 {
   left: 21.1333333333em;
@@ -124,6 +124,7 @@ margin-left: 80%;
   display: none !important;
 }
 .main__ans__txt {
+    padding-bottom:1.2666666667em ;
   text-align: center;
   padding-top: 1.2666666667em;
 }
@@ -193,7 +194,7 @@ margin-left: 80%;
   width: 42px;
   height: 39px;
   position: absolute;
-  top: 2em;
+  top: 34px;
   left: 1.3333333333em;
   z-index: 11;
 }
@@ -402,6 +403,7 @@ margin-left: 80%;
 .main .rec__ttl::after {
   content: "KW";
 }
+
 
 
 /* 記録の一つ一つに背景を入れた */

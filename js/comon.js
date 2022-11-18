@@ -3,9 +3,11 @@ $(function () {
 
     let watt;
     let Kwh = 0;
-    let time = 0;
     let rev_kwh = 0;
+    let time = 0;
     let days;
+    let y;
+
 
     // let date = [];
     // let Electricity = [];
@@ -324,37 +326,8 @@ $(function () {
     }
 
 
-    /* ===== canvas ===== */
-    $(window).on("load", () => {
-        // canvas準備
-        let ctx = $("#board")[0].getContext("2d");
-        ctx.fillRect(10, 10, 0, 10);
-        ctx.fillStyle = "#000";
-        // 画像読み込み
-        const chara02 = new Image();
-        chara02.src = "./images/lp/lp_light_upper2.png";  // 画像のURLを指定
-        chara02.onload = () => {
-            ctx.drawImage(chara02, 0, 0);
-        };
-        const chara = new Image();
-        chara.src = "./images/lp/lp_light_bottom.png";  // 画像のURLを指定
-        chara.onload = () => {
-            ctx.drawImage(chara, 16, 138);
-        };
 
-        let y = 138 - max;
-        let canvas = $("#board")[0].getContext("2d");
-        canvas.beginPath();
-        canvas.strokeStyle = '#FFF100';
-        canvas.fillStyle = '#FFF100';
-        canvas.moveTo(0, 138);
-        canvas.lineTo(0, y);
-        canvas.lineTo(150, y);
-        canvas.lineTo(150, 138);
-        canvas.fill();
-    });
 
-    let max = 1;
     $("#Yreset").on('click', function () {
 
         // console.log("hello");
@@ -369,13 +342,26 @@ $(function () {
 
         /* ===== 計算式 ===== */
         console.log(time);
-        watt = 3600 * 1000 / (time * rev_kwh);
+        watt = 3600 * 1000 / ((time + 180) * rev_kwh);
         console.log(watt)
         Kwh = watt / 1000;
         Kwh = watt * 24;
-        console.log(Kwh);
 
+        // /* ===== canvas計算 ===== */
+        let max;
+        max = Kwh / 120;
+        y = 138 - max;
+        let canvas = $("#board")[0].getContext("2d");
+        canvas.beginPath();
+        canvas.strokeStyle = '#FFF100';
+        canvas.fillStyle = '#FFF100';
+        canvas.moveTo(0, 138);
+        canvas.lineTo(0, y);
+        canvas.lineTo(150, y);
+        canvas.lineTo(150, 138);
+        canvas.fill();
 
+        //0.42
 
         /* ===== ローカルストレージに記録 ===== */
 
@@ -419,22 +405,8 @@ $(function () {
                 data02 = JSON.parse(data02);
                 console.log(data02);
 
-                // /* ===== canvas計算 ===== */
-                max = Kwh * 120;
-                y = 138 - max;
-                console.log(max);
-                console.log(y);
-                let y = 138 - max;
-                let canvas = $("#board")[0].getContext("2d");
-                canvas.beginPath();
-                canvas.strokeStyle = '#FFF100';
-                canvas.fillStyle = '#FFF100';
-                canvas.moveTo(0, 138);
-                canvas.lineTo(0, y);
-                canvas.lineTo(150, y);
-                canvas.lineTo(150, 138);
-                canvas.fill();
-                // //0.42
+
+
             }
         } else
         { //使えない時

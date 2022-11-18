@@ -375,13 +375,7 @@ $(function () {
         Kwh = watt * 24;
         console.log(Kwh);
 
-        /* ===== canvas計算 ===== */
-        max = 69;
-        y = 138 - max;
-        console.log(max);
-        console.log(y);
-        //0.42
-        //canvas組み込む
+
 
         /* ===== ローカルストレージに記録 ===== */
 
@@ -424,6 +418,24 @@ $(function () {
                 data02 = localStorage.getItem('value');
                 data02 = JSON.parse(data02);
                 console.log(data02);
+
+                /* ===== canvas計算 ===== */
+                max = Kwh * 120;
+                y = 138 - max;
+                console.log(max);
+                console.log(y);
+                let y = 138 - max;
+                let canvas = $("#board")[0].getContext("2d");
+                canvas.beginPath();
+                canvas.strokeStyle = '#FFF100';
+                canvas.fillStyle = '#FFF100';
+                canvas.moveTo(0, 138);
+                canvas.lineTo(0, y);
+                canvas.lineTo(150, y);
+                canvas.lineTo(150, 138);
+                canvas.fill();
+                //0.42
+                //canvas組み込む
             }
         } else
         { //使えない時

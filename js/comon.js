@@ -419,7 +419,7 @@ $(function () {
                 data02 = JSON.parse(data02);
                 console.log(data02);
 
-                /* ===== canvas計算 ===== */
+                // /* ===== canvas計算 ===== */
                 max = Kwh * 120;
                 y = 138 - max;
                 console.log(max);
@@ -434,8 +434,7 @@ $(function () {
                 canvas.lineTo(150, y);
                 canvas.lineTo(150, 138);
                 canvas.fill();
-                //0.42
-                //canvas組み込む
+                // //0.42
             }
         } else
         { //使えない時

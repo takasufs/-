@@ -35,6 +35,7 @@ li {
 body {
   width: 375px;
   margin: 0 auto;
+  background-color: #EBFFF9;
 }
 
 .header {
@@ -154,113 +155,44 @@ body {
 
 .footer {
   background-color: #EBFFF9;
-}
-.footer__inner {
-  padding-top: 0.5333333333em;
+  position: absolute; /*←絶対位置*/
+  bottom: 0; /*下に固定*/
 }
 .footer__nav__gnav {
   display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
-}
-.footer__nav__gnav__item {
-  list-style: none;
+  flex-wrap: nowrap;
+  text-align: baseline;
+  position: relative;
 }
 .footer__nav__gnav .gnav01 {
-  width: 108px;
-  height: 86px;
-  position: relative;
+  max-width: 108px;
+  max-height: 86px;
 }
 .footer__nav__gnav .gnav01__link {
-  width: 108px;
-  height: 86px;
-  position: relative;
-  z-index: 11;
-}
-.footer__nav__gnav .gnav01__link::after {
-  content: "";
-  position: absolute;
-  border: solid #FFF450;
-  border-width: 82px 108px 0 0;
-  border-top-right-radius: 100%;
-  padding-left: 50%;
-  z-index: 10;
-}
-.footer__nav__gnav .gnav01__img {
-  width: 42px;
-  height: 39px;
-  position: absolute;
-  top: 2em;
-  left: 1.3333333333em;
-  z-index: 11;
-}
-.footer__nav__gnav .gnav01__txt {
-  font-size: 8px;
-  position: absolute;
-  top: 9.375em;
-  left: 3.25em;
-  z-index: 11;
+  max-width: 108px;
+  max-height: 86px;
 }
 .footer__nav__gnav .gnav02 {
-  width: 61px;
-  height: 61px;
-  position: relative;
-}
-.footer__nav__gnav .gnav02__link {
-  width: 61px;
-  height: 61px;
   position: absolute;
-  top: 1.8em;
-  left: 0.4666666667em;
-  background-color: #FFF450;
-  border-radius: 50%;
-}
-.footer__nav__gnav .gnav02__img {
-  width: 21px;
-  height: 17px;
-  position: absolute;
-  top: 1.3333333333em;
-  left: 1.1333333333em;
-}
-.footer__nav__gnav .gnav02__txt {
-  font-size: 8px;
-  position: absolute;
-  top: 5.125em;
-  left: 3em;
+  bottom: 6px;
+  left: 115px;
+  max-width: 61px;
+  max-height: 61px;
 }
 .footer__nav__gnav .gnav03 {
-  width: 61px;
-  height: 61px;
-  position: relative;
-}
-.footer__nav__gnav .gnav03__link {
-  width: 61px;
-  height: 61px;
   position: absolute;
-  top: 1.8em;
-  left: 1.2em;
-  background-color: #FFF450;
-  border-radius: 50%;
+  bottom: 6px;
+  left: 194px;
+  max-width: 61px;
+  max-height: 61px;
 }
-.footer__nav__gnav .gnav03__img {
-  width: 21px;
-  height: 17px;
-  position: absolute;
-  top: 16.3333333333px;
-  left: 20.1333333333px;
-}
-.footer__nav__gnav .gnav03__txt {
-  font-size: 8px;
-  position: absolute;
-  top: 5.125em;
-  left: 1.875em;
-}
-
 .main__record {
   width: 100%;
   height: 534px;
   background-color: #01FFB1;
   border-radius: 26px;
+  margin-top: 1.2em;
 }
 .main__record__ttl {
   text-align: center;

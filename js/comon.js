@@ -93,23 +93,23 @@ $(function () {
 
         // 状態:初期 または Reset直後
         function setButtonStateInitial() {
-            $('#start').removeClass(); // 活性
+            $('#start').removeClass('inactive'); // 活性
             $('#stop').addClass('inactive');    // 非活性
             $('#reset').addClass('inactive');   // 非活性
         }
 
         // 状態:タイマー動作中
         function setButtonStateRunning() {
+            $('#stop').removeClass('inactive');  // 活性
             $('#start').addClass('inactive');   // 非活性
-            $('#stop').removeClass();  // 活性
             $('#reset').addClass('inactive');  // 非活性
         }
 
         // 状態:タイマー停止中
         function setButtonStateStopped() {
+            $('#reset').removeClass('inactive'); // 活性
             $('#start').addClass('inactive'); // 活性
             $('#stop').addClass('inactive');    // 非活性
-            $('#reset').removeClass(); // 活性
         }
 
 
@@ -368,15 +368,18 @@ $(function () {
     $(".header__nav__gnav__item__link").click(function () {
         $(this).data("click", ++num);
 
-        if (data01.length == 7) {
+        if (data01.length == 7)
+        {
             $('.header__nav').append(`<div class="balloon1-top"></div>`);
             $('.balloon1-top').append(`<p>節電をよく頑張ったね！これからも頑張って行こう！</p>`);
             $('.balloon1-top p').append(`<br><a href="${url}">${url}</a>`)
-        } else {
+        } else
+        {
             console.log("がんばっれ")
         }
         let click = $(this).data("click");
-        if ((click % 2) == 0) {
+        if ((click % 2) == 0)
+        {
             $('.balloon1-top').remove();
         }
         return false;

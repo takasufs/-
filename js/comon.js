@@ -222,15 +222,23 @@ $(function () {
         let max;
         max = Kwh / 120;
         y = 138 - max;
-        let canvas = $("#board")[0].getContext("2d");
-        canvas.beginPath();
-        canvas.strokeStyle = '#FFF100';
-        canvas.fillStyle = '#FFF100';
-        canvas.moveTo(0, 138);
-        canvas.lineTo(0, y);
-        canvas.lineTo(150, y);
-        canvas.lineTo(150, 138);
-        canvas.fill();
+
+        let moveX = 0;
+
+        let draw = () => {
+            if (moveX <= y)
+            {
+                let canvas = $("#board")[0].getContext("2d");
+                canvas.beginPath();
+                canvas.strokeStyle = '#FFF100';
+                canvas.fillStyle = '#FFF100';
+                canvas.fillRect(0, 138, 150, -moveX);
+                moveX++;
+                requestAnimationFrame(draw);
+            }
+        }
+
+        draw();
 
         //0.42
 
@@ -327,15 +335,15 @@ $(function () {
         let today = record[1];
 
         // 小数点第2位で四捨五入
-        yesterday = Math.round( Math.round( yesterday * 10 ) / 10 )
-        today = Math.round( Math.round( today * 10 ) / 10 )
+        yesterday = Math.round(Math.round(yesterday * 10) / 10)
+        today = Math.round(Math.round(today * 10) / 10)
 
         $('.yesterday').html(yesterday);
         $('.today').html(today);
 
         //前回と今回の差を計算
         let between = yesterday - today;
-        between = Math.round( Math.round( between * 10 ) / 10 )
+        between = Math.round(Math.round(between * 10) / 10)
         console.log(between)
         // 計算した値を表示
         $('.main__rec__compar__valu').html(between);
@@ -364,7 +372,7 @@ $(function () {
         {
             $(".main__record__table").append(`<div class="box__list${i}  item"></div>`);
             $(`.box__list${i}`).append(`<p id="day" class="day${i} item__day">日付：${data01[i]}</p>`);
-            $(`.box__list${i}`).append(`<h4 id="value" class="value${i} item__value">消費電力:${Math.round( Math.round( data02[i] * 10 ) / 10 )}khw</h4>`)
+            $(`.box__list${i}`).append(`<h4 id="value" class="value${i} item__value">消費電力:${Math.round(Math.round(data02[i] * 10) / 10)}khw</h4>`)
         }
     })
 

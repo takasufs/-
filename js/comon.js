@@ -325,11 +325,17 @@ $(function () {
         //それぞれのデータを変数に入れる
         let yesterday = record[0];
         let today = record[1];
+
+        // 小数点第2位で四捨五入
+        yesterday = Math.round( Math.round( yesterday * 10 ) / 10 )
+        today = Math.round( Math.round( today * 10 ) / 10 )
+
         $('.yesterday').html(yesterday);
         $('.today').html(today);
 
         //前回と今回の差を計算
         let between = yesterday - today;
+        between = Math.round( Math.round( between * 10 ) / 10 )
         console.log(between)
         // 計算した値を表示
         $('.main__rec__compar__valu').html(between);
@@ -356,33 +362,34 @@ $(function () {
         console.log(data02);
         for (let i = 0; i < data01.length; i++)
         {
-            $(".main__record__table").append(`<div class="box__list${i}"></div>`);
-            $(`.box__list${i}`).append(`<p id="day" class="day${i}">日付：${data01[i]}</p>`);
-            $(`.box__list${i}`).append(`<h4 id="value" class="value${i}">消費電力:${data02[i]}khw</h4>`)
+            $(".main__record__table").append(`<div class="box__list${i}  item"></div>`);
+            $(`.box__list${i}`).append(`<p id="day" class="day${i} item__day">日付：${data01[i]}</p>`);
+            $(`.box__list${i}`).append(`<h4 id="value" class="value${i} item__value">消費電力:${Math.round( Math.round( data02[i] * 10 ) / 10 )}khw</h4>`)
         }
     })
 
-    // /* ========================= ベルマークの機能 ========================= */
-    let url = `https://www.google.com/`;
-    let num = 0;
-    $(".header__nav__gnav__item__link").click(function () {
-        $(this).data("click", ++num);
 
-        if (data01.length == 7)
-        {
-            $('.header__nav').append(`<div class="balloon1-top"></div>`);
-            $('.balloon1-top').append(`<p>節電をよく頑張ったね！これからも頑張って行こう！</p>`);
-            $('.balloon1-top p').append(`<br><a href="${url}">${url}</a>`)
-        } else
-        {
-            console.log("がんばっれ")
-        }
-        let click = $(this).data("click");
-        if ((click % 2) == 0)
-        {
-            $('.balloon1-top').remove();
-        }
-        return false;
-        console.log()
-    });
+    // /* ========================= ベルマークの機能 ========================= */
+    // let url = `https://bell-cocoro.org/Eneka/images/comon/commend.png`;
+    // let num = 0;
+    // $(".header__nav__gnav__item__link").click(function () {
+    //     $(this).data("click", ++num);
+
+    //     if (data01.length == 7)
+    //     {
+    //         $('.header__nav').append(`<div class="balloon1-top"></div>`);
+    //         $('.balloon1-top').append(`<p>節電をよく頑張ったね！これからも頑張って行こう！</p>`);
+    //         $('.balloon1-top p').append(`<br><a href="${url}">${url}</a>`)
+    //     } else
+    //     {
+    //         console.log("がんばっれ")
+    //     }
+    //     let click = $(this).data("click");
+    //     if ((click % 2) == 0)
+    //     {
+    //         $('.balloon1-top').remove();
+    //     }
+    //     return false;
+    //     console.log()
+    // });
 });

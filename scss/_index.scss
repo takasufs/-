@@ -158,9 +158,8 @@ body {
 }
 
 .footer {
-  background-color: color.$color-main; //#EBFFF9
-    position: absolute;/*←絶対位置*/
     bottom: 0; /*下に固定*/
+    display: block;
   &__inner {
   }
 
@@ -169,7 +168,6 @@ body {
             display: flex;
             justify-content: flex-start;
             flex-wrap: nowrap;
-            text-align: baseline;
             position:relative;
       &__item {
 

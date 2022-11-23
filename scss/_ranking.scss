@@ -3,8 +3,8 @@
 
     &__rec {
         z-index: 20;
-        padding-top: (30em/15);
-        padding-bottom: (91em/15);
+        padding-top: (30em/16);
+        padding-bottom: (14em/16);
         position: relative;
 
         &-last {
@@ -65,7 +65,7 @@
             display: block;
             width: 180px;
             height: 398px;
-            background-image: url('/images/ranking/arrow_big_up.png');
+            background-image: url('../images/ranking/arrow_big_up.png');
             position: absolute;
             float: right;
             z-index: 10;
@@ -83,7 +83,7 @@
             width: 375px;
             height: 747px;
             position: absolute;
-            background-image: url('/images/ranking/arrow_big_down.png');
+            background-image: url('../images/ranking/arrow_big_down.png');
             z-index: 10;
             right: 0;
             top: 0;
@@ -117,5 +117,14 @@
             content: "Kwh";
         }
     }
+.comparison{
+    background-color: #FFD400;
+    max-width: 20%;
+    border-radius: 10px;
+    text-align: center;
+    padding: (10em/16);
+    margin: (10em/16) 0;
+    font-weight: bold;
+}
 
 }

@@ -383,13 +383,41 @@ $(function () {
         $(".main__record__table").empty();
         console.log(data01);
         console.log(data02);
-        for (let i = 0; i < data01.length; i++)
+        if ((text_change.text()) == "もっと表示")
         {
-            $(".main__record__table").append(`<div class="box__list${i}  item"></div>`);
-            $(`.box__list${i}`).append(`<p id="day" class="day${i} item__day">日付：${data01[i]}</p>`);
-            $(`.box__list${i}`).append(`<h4 id="value" class="value${i} item__value">消費電力:${Math.round(Math.round(data02[i] * 10) / 10)}khw</h4>`)
+            for (let i = 0; i < data01.length; i++)
+            {
+                $(".main__record__table").append(`<div class="box__list${i}  item"></div>`);
+                $(`.box__list${i}`).append(`<p id="day" class="day${i} item__day">日付：${data01[i]}</p>`);
+                $(`.box__list${i}`).append(`<h4 id="value" class="value${i} item__value">消費電力:${Math.round(Math.round(data02[i] * 10) / 10)}khw</h4>`)
+            }
+        } else
+        {
+            for (let i = 0; i < data01.length; i++)
+            {
+                if (i < 6)
+                {
+                    $(".main__record__table").append(`<div class="box__list${i}  item"></div>`);
+                    $(`.box__list${i}`).append(`<p id="day" class="day${i} item__day">日付：${data01[i]}</p>`);
+                    $(`.box__list${i}`).append(`<h4 id="value" class="value${i} item__value">消費電力:${Math.round(Math.round(data02[i] * 10) / 10)}khw</h4>`)
+                    if (i == 5 && data01.length > 6)
+                    {
+                        dsiplay_change();
+                    }
+                }
+
+            }
         }
     })
+
+    let text_change = $(".main__record #display-change");
+
+    function dsiplay_change() {
+        text_change.text("もっと表示");
+    }
+
+
+
 
 
     // /* ========================= ベルマークの機能 ========================= */

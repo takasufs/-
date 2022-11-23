@@ -238,7 +238,17 @@ $(function () {
             }
         }
 
-        draw();
+        let drawreset = () => {
+            let canvas = $("#board")[0].getContext("2d");
+
+            canvas.clearRect(0, 0, 150, 137);
+            const chara02 = new Image();
+            chara02.src = "./images/lp/lp_light_upper2.png";  // 画像のURLを指定
+            chara02.onload = () => {
+                canvas.drawImage(chara02, 0, 0);
+                canvas.globalCompositeOperation = "destination-over";
+            };
+        }
 
         //0.42
 
@@ -249,6 +259,10 @@ $(function () {
             if (Yreset.value == "リセット")
             {
                 Yreset.value = "計算";
+
+                // /* ===== canvasリセット ===== */
+
+                drawreset();
             } else
             {
                 Yreset.value = "リセット";
@@ -285,6 +299,7 @@ $(function () {
                 console.log(data02);
 
 
+                draw();
 
             }
         } else
